@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <style type="text/tailwindcss">
         @layer utilities {
           .content-auto {
             content-visibility: auto;
-          }
-          .container{
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 16px;
-            width: 100%;
           }
         }
       </style>
@@ -25,29 +17,16 @@
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        clifford: '#DA373D',
                     }
                 }
             }
         }
     </script>
 </head>
-
 <body>
-   <div class="p-4 latestbg rounded-[30px]">
-    <div>
-        <img src="./images/latestbg.png" class="object-contain" alt="">
-    </div>
-    <div>
-        <div class="flex items-center gap-x-5">
-            <h3 class="text-sm font-normal text-[#FFF3CE]">Mark Zane</h3>
-            <h3 class="text-sm font-normal text-[#4FC4CD]">Designing</h3>
-        </div>
-        <h2 class="text-4xl ">
-            Fuel Delivery: Convenience and Efficiency at Your Doorstep
-        </h2>
-    </div>
-   </div>
+    <h1 class="text-3xl font-bold underline text-[100px]">
+        Hello world!
+    </h1>
 </body>
-
 </html>
