@@ -16,6 +16,14 @@
             padding: 0 16px;
             width: 100%;
           }
+          .searchbaractive {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease;
+          }
+          .searchbaractive.active {
+            height: 200px; /* Adjust the height as needed */
+          }
         }
       </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,9 +41,139 @@
 </head>
 
 <body class="bg-black">
-    <header class="container max-w-[1224px]  ">
-
+    <header class="container max-w-[1224px]">
+        <div class="border-[#14191D] border mt-[30px]  rounded-[40px]">
+            <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
+                <div class="flex items-center gap-5">
+                    <img src="./images/arrow.png" class="lg:hidden rotate-[90deg]" alt="arrow">
+                    <img src="/images/logo.png" alt="logo">
+                </div>
+                <div class="lg:flex gap-5 items-center hidden">
+                    <div class="flex items-center">
+                        <h2 class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] ">Services</h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="flex items-center">
+                        <h2 class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] ">Services</h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                        Careers
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                        Community
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                        About Us
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                        FAQs
+                    </a>
+                </div>
+                <div class="flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center">
+                    <button
+                        class="py-[16px] hidden lg:block px-3 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]  max-w-[137px] w-full">Download
+                        app</button>
+                    <div class="rounded-[50px] search bg-[#262F36] p-[14px]">
+                        <img src="/images/searchicon.png" alt="searchicon">
+                    </div>
+                    <img class="lg:hidden" src="/images/sidebaricon.png" alt="sidebaricon">
+                </div>
+            </div>
+            <div class="searchbaractive  w-full px-[50px]">
+                <div class="flex justify-end ">
+                    <img class="p-3" src="/images/closeicon.png" alt="closeicon">
+                </div>
+                <div class=" border-b border-[#323E48] flex gap-6 items-center  w-full">
+                    <img src="/images/searchicon.png" alt="searchicon">
+                    <input placeholder="Search Blog" type="text"
+                        class="outline-none text-[#ADB2B6] w-full bg-black border-none pt-3 pb-6 px-5" name="" id="">
+                </div>
+                <div class="pt-[10px]">
+                    <ul class="flex gap-[30px] px-[68px] ">
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h2>Recent Searches</h2>
+                    <div class="flex gap-3">
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
+                            Fuel Delivery</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car Wash</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Tyres</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car Engine Oil</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car Battery</button>
+                            <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car Insurance</button>
+                            <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Rescue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <!-- <div class=" lg:hidden block fixed left-0 top-0 h-full w-64 bg-gray-900 text-white shadow-lg">
+            <div class="flex items-center justify-between p-4">
+                <h1 class="text-xl font-bold">CAFU</h1>
+                <button id="closeSidebar" class="text-white focus:outline-none">×</button>
+            </div>
+            <nav class="mt-4">
+                <ul>
+                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
+                        <a href="#">Services <span class="text-gray-400">▼</span></a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
+                        <a href="#">For Business <span class="text-gray-400">▼</span></a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
+                        <a href="#">Careers</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
+                        <a href="#">Community</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
+                        <a href="#">About Us</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
+                        <a href="#">FAQs</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mt-auto p-4">
+                <button class="w-full py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition duration-300">
+                    Download app
+                </button>
+            </div>
+        </div> -->
     </header>
+
+    <script>
+        let searchbaractive = document.querySelector(".searchbaractive");
+
+        document.querySelector(".search").addEventListener("click", function () {
+            if (!searchbaractive.classList.contains("active")) {
+                // Get the full height of the content before setting it
+                let fullHeight = searchbaractive.scrollHeight + "px";
+                searchbaractive.style.height = fullHeight;  // Set dynamic height
+                searchbaractive.classList.add("active");
+            } else {
+                searchbaractive.style.height = "0";  // Collapse the box
+                searchbaractive.classList.remove("active");
+            }
+        });
+    </script>
 </body>
 
 </html>
