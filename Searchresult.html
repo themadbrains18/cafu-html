@@ -39,7 +39,352 @@
     </script>
 </head>
 <body>
-    <section class="py-10 lg:py-20 bg-black">
+    <header class="max-w-[1224px]  w-full fixed z-10 left-1/2 transform -translate-x-1/2 px-4">
+
+        <div class=" relative border-[#14191D] border mt-[30px]  rounded-[40px] bg-black ">
+            <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
+                <div class="flex items-center gap-5">
+                    <img src="./images/arrow.png" class="lg:hidden rotate-[90deg]" alt="arrow">
+                    <img src="/images/logo.png" alt="logo">
+                </div>
+                <div class="lg:flex gap-5 items-center hidden">
+                    <!-- Dropdown 1 -->
+                    <div class="dropdown relative ">
+                        <!-- Dropdown Button 1 -->
+                        <button id="dropdownButton1"
+                            class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                            <span class="text-[12px] leading-[18px]   font-normal py-[6px]]">For
+                                Business</span>
+                            <!-- Icon (Chevron Down) -->
+                            <svg id="dropdownIcon1" xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown Menu 1 -->
+                        <div id="dropdownMenu1"
+                            class="hidden absolute mt-[26px] w-48 bg-[#14191D] text-white rounded-md shadow-lg z-20 ">
+                            <div class="flex flex-col gap-2 justify-center items-center">
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Consulting</a>
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown 2 -->
+                    <div class="dropdown relative">
+                        <!-- Dropdown Button 2 -->
+                        <button id="dropdownButton2"
+                            class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                            <span class="text-[12px] leading-[18px]   font-normal py-[6px]]">Solutions</span>
+                            <!-- Icon (Chevron Down) -->
+                            <svg id="dropdownIcon2" xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown Menu 2 -->
+                        <div id="dropdownMenu2"
+                            class="hidden absolute mt-[26px] w-48 bg-[#14191D] text-white rounded-md shadow-lg z-20">
+                            <div class="flex flex-col gap-2 justify-center items-center">
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Consulting</a>
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
+                        Careers
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
+                        Community
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0]     hover:text-[#4FC4CD]   font-normal py-[6px]"
+                        href="#">
+                        About Us
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
+                        FAQs
+                    </a>
+                </div>
+                <!-- language menu -->
+
+
+                <div class="dropdown relative  lg:block hidden ">
+                    <!-- Dropdown Button 2 -->
+                    <button id="dropdownButton3"
+                        class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                        <img src="/images/fb.svg" alt="" />
+                        <span id="dropdownText" class="text-[12px] leading-[18px] font-normal py-[6px]">EN</span>
+                        <!-- Icon (Chevron Down) -->
+                        <svg id="dropdownIcon3" xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform duration-300 transform" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+
+                    <!-- Dropdown Menu 2 -->
+                    <div id="dropdownMenu3"
+                        class="hidden absolute mt-[26px] w-48 bg-[#14191D] text-white rounded-md shadow-lg z-20">
+                        <div class="flex flex-col gap-2 justify-center items-center ">
+                            <a href="#" id="menuConsulting"
+                                class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD] font-normal py-[6px] w-full text-center">Consulting</a>
+                            <a href="#" id="menuIntegration"
+                                class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD] font-normal py-[6px] w-full text-center">Integration</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center ">
+                    <!-- Button with hover -->
+                    <div class="group pb-5 -mb-5">
+                        <button
+                            class="py-[16px] group-hover:bg-white group-hover:text-black  duration-[0.5s] hidden lg:block px-3 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF] max-w-[137px] w-full">
+                            Download app
+                        </button>
+                        <!-- Div that appears on hover -->
+                        <div
+                            class="absolute right-0 top-[110%] duration-[0.4s] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity  bg-white text-black py-2.5 px-4 rounded-lg shadow-lg z-10 w-[400px]">
+                            <div class="flex w-full gap-2">
+                                <img class="max-w-[110px] h-[110px] w-full" src="/images/qr.png" alt="qr">
+                                <div class="flex flex-col gap-[2px] items-center ">
+                                    <p class="text-[13px] leading-6 font-semibold text-[#323E48]">Scan to download CAFU
+                                        app in
+                                        your phone. <a class="text-[#ADB2B6]" href="#">Or get it here:</a></p>
+                                    <div class="flex gap-2 items-center w-full">
+                                        <button
+                                            class="flex gap-1 p-3  bg-gray-200 rounded-[20px] items-center w-full justify-center">
+                                            <img src="/images/apple_logo.svg" alt="">
+                                            <span class="text-[13px] ">App Store</span>
+                                        </button>
+                                        <button
+                                            class="flex gap-1 p-3  bg-gray-200 rounded-[20px] items-center w-full justify-center">
+                                            <img src="/images/googleplay.svg" alt="">
+                                            <span class="text-[13px] ">App Store</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search bar icon -->
+                    <div id="searchbarIcon" class="rounded-[50px] search cursor-pointer bg-[#262F36] p-[14px]">
+                        <img src="/images/searchicon.png" alt="searchicon">
+                    </div>
+
+                    <!-- Sidebar icon (visible in mobile) -->
+                    <img id="sidebarIcon" class="lg:hidden" src="/images/sidebaricon.png" alt="sidebaricon">
+                </div>
+            </div>
+            <div class="searchbaractive hidden lg:block  w-full  px-5 md:px-[50px] ">
+                <div class=" closesearchbar flex justify-end pt-[30px] ">
+                    <img class="p-3 cursor-pointer " src="/images/closeicon.png" alt="closeicon">
+                </div>
+                <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
+                    <img src="/images/searchicon.png" alt="searchicon">
+                    <input placeholder="Search Blog" type="search"
+                        class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
+                </div>
+                <div class="pt-[10px] ">
+                    <ul class="flex gap-[30px] md:px-[68px]  flex-wrap">
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                    </ul>
+                </div>
+                <div class="mt-10">
+                    <h2 class="text-[14px] font-normal leading-5 text-[#ADB2B6]">Recent Searches</h2>
+                    <div class="flex gap-3 pb-[50px] flex-wrap max-[500px]:justify-center pt-2.5 ">
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
+                            Fuel Delivery</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Wash</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Tyres</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Engine Oil</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Battery</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Insurance</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Rescue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:hidden">
+            <div id="sidebar" class="sidebar ">
+                <div class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px] ">
+                    <div class="border-b border-[#21292F] ">
+                        <div class="flex items-center justify-between mx-4 py-2.5 px-4">
+                            <a href="#">
+                                <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
+                            </a>
+                            <img class="" id="closeSidebar" src="/images/closeicon.png" alt="closeicon">
+                        </div>
+                    </div>
+                    <div class="overflow-scroll h-[calc(100%_-_100px)] ">
+                        <div
+                            class="flex flex-col  space-y-[30px] px-5 border-b border-[#21292F] pt-[40px] pb-[56px] items-center ">
+                            <div class="w-full text-center">
+                                <div
+                                    class="accordion-header cursor-pointer group flex py-[6px] gap-1 items-center justify-center ">
+                                    <h2 class="text-[#EFEFF0]  text-[16px] group-hover:text-[#4FC4CD] ">Services</h2>
+                                    <!-- <img src="/images/arrowicon.svg" alt="arrow"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16"
+                                        fill="hover:red">
+                                        <path d="M5.83301 6.66675L8.49967 9.33341L11.1663 6.66675" stroke="#DEE0E2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <ul class=" overflow-hidden h-0 duration-[0.3s] w-full flex space-y-[10px] flex-col ">
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="w-full text-center">
+                                <div
+                                    class="accordion-header cursor-pointer group flex py-[6px] gap-1 items-center justify-center">
+                                    <h2 class="text-[#EFEFF0]  text-[16px] group-hover:text-[#4FC4CD] ">For Business
+                                    </h2>
+                                    <img src="/images/arrow.png" alt="arrow">
+                                </div>
+                                <ul class=" overflow-hidden h-0 duration-[0.3s] w-full flex space-y-[10px] flex-col ">
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                </ul>
+                            </div>
+
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                Careers
+                            </a>
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                Community
+                            </a>
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                About Us
+                            </a>
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                FAQs
+                            </a>
+                        </div>
+                        <div class="flex gap-3 items-center justify-end sm:justify-center px-5 pt-[50px]">
+                            <button
+                                class="py-4 px-6 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]   w-full">
+                                Download app
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- searchbarres -->
+        <div class="lg:hidden">
+            <div id="searchbarres" class="searchbarres ">
+                <div
+                    class="lg:hidden block w-full bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px]">
+                    <div class="border-b border-[#21292F] ">
+                        <div class="flex items-center justify-between mx-4 py-2.5 px-4">
+                            <a href="#">
+                                <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
+                            </a>
+                            <img class="" id="closesearchbar" src="/images/closeicon.png" alt="closeicon">
+                        </div>
+                    </div>
+                    <div class="overflow-scroll h-[calc(100%_-_100px)]">
+                        <div class="px-5 mt-[40px]">
+                            <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
+                                <img src="/images/searchicon.png" alt="searchicon">
+                                <input placeholder="Search Blog" type="text"
+                                    class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
+                            </div>
+                        </div>
+                        <div class="pt-[10px]">
+                            <ul class="flex gap-[30px] md:px-[68px]  flex-wrap px-5">
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                            </ul>
+                        </div>
+                        <div class="px-5 mt-[56px]">
+                            <h2 class="text-[14px] font-normal leading-5 text-[#ADB2B6]">Recent Searches</h2>
+                            <div class="flex gap-3 pb-[50px] flex-wrap max-[500px]:justify-center pt-2.5">
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
+                                    Fuel Delivery</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Wash</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Tyres</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Engine Oil</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Battery</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Insurance</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Rescue</button>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-center justify-end sm:justify-center px-5 pt-[50px]">
+                            <button
+                                class="py-4 px-6 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]   w-full">
+                                Download app
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="py-10 lg:py-[180px] bg-black">
         <div class="container">
             <div>
                 <h2
