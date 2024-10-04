@@ -16,6 +16,9 @@
             .content-auto {
                 content-visibility: auto;
             }
+            .common-hover{
+        @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
+    }
             .container {
                 max-width: 1256px;
                 margin: 0 auto;
@@ -228,7 +231,7 @@ background-clip: text;
                         Cafu Latest Posts
                     </h2>
                     <button
-                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4  leading-5 font-semibold text-[13px] flex items-center gap-x-2">View
+                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4  leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">View
                         All <img src="./images/arrow.svg" alt=""></button>
                 </div>
                 <div class="grid mt-8 min-[991px]:grid-cols-2 gap-3 tab:gap-6">
@@ -251,7 +254,7 @@ background-clip: text;
                         </div>
                     </div>
 
-                    <div class="py-[6px]  flex tab:hidden   gap-x-5">
+                    <div class="py-[6px]  flex tab:hidden   gap-x-5 common-hover">
                         <div>
                             <img src="./images/latest3.png"
                                 class="max-[500px]:w-[200px] max-[500px]:h-[110px] max-[400px]:h-[80px]" alt="">
@@ -274,7 +277,7 @@ background-clip: text;
                         </div>
                     </div>
                     <div class="grid gap-3">
-                        <div class="py-[6px] flex   gap-x-5">
+                        <div class="py-[6px] flex   gap-x-5 common-hover">
                             <div>
                                 <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px] " alt="">
                             </div>
@@ -295,7 +298,7 @@ background-clip: text;
                                 </div>
                             </div>
                         </div>
-                        <div class="py-[6px] flex   gap-x-5">
+                        <div class="py-[6px] flex   gap-x-5 common-hover">
                             <div>
                                 <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                             </div>
@@ -316,7 +319,7 @@ background-clip: text;
                                 </div>
                             </div>
                         </div>
-                        <div class="py-[6px] flex   gap-x-5">
+                        <div class="py-[6px] flex   gap-x-5 common-hover">
                             <div>
                                 <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                             </div>
@@ -353,7 +356,7 @@ background-clip: text;
                         Browse by Tags
                     </h2>
                     <button
-                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4 leading-5 font-semibold text-[13px] flex items-center gap-x-2">View
+                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4 leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">View
                         All <img src="./images/arrow.svg" alt=""></button>
                 </div>
                 <div class="swiper-container relative overflow-hidden mt-8 md:mt-14">
@@ -544,7 +547,7 @@ background-clip: text;
         <div class="container">
             <h1 class="md:text-5xl poppins font-semibold leading-[58px] lineartext text-center">Browse by Category</h1>
             <div class="mt-8 md:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -554,7 +557,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -564,7 +567,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -574,7 +577,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -584,7 +587,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -594,7 +597,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -604,7 +607,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -614,7 +617,7 @@ background-clip: text;
                         <h3 class=" text-lg text-white font-semibold leading-[27px] mt-4">Fuel Delivery</h3>
                     </div>
                 </div>
-                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative">
+                <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
                     <div class="mt-3 md:mt-4">
@@ -638,11 +641,11 @@ background-clip: text;
                         Browse by Tags
                     </h2>
                     <button
-                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4 leading-5 font-semibold text-[13px] flex items-center gap-x-2">View
+                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4 leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">View
                         All <img src="./images/arrow.svg" alt=""></button>
                 </div>
                 <div class="grid mt-8 md:mt-14 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -660,7 +663,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -678,7 +681,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -696,7 +699,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -714,7 +717,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -732,7 +735,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg2 flex justify-center items-end">
                             <div class="p-6  ">
@@ -767,7 +770,7 @@ background-clip: text;
                     Browse by Tags
                 </h2>
                 <div class="grid mt-8 md:mt-14 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="relative">
+                    <div class="relative  common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -785,7 +788,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -803,7 +806,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -821,7 +824,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -839,7 +842,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -857,7 +860,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
+                    <div class="relative common-hover">
                         <img src="./images/Blog Card.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg2 flex justify-center items-end">
                             <div class="p-6  ">
@@ -892,7 +895,7 @@ background-clip: text;
                     Blog Articles
                 </h2>
                 <div class="mt-8 md:mt-14 grid lg:grid-cols-2  md:gap-6">
-                    <div class="py-[6px] flex   gap-x-5">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
                         <div>
                             <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                         </div>
@@ -913,7 +916,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="py-[6px] flex   gap-x-5">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
                         <div>
                             <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                         </div>
@@ -934,7 +937,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="py-[6px] flex   gap-x-5">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
                         <div>
                             <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                         </div>
@@ -955,7 +958,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="py-[6px] flex   gap-x-5">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
                         <div>
                             <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                         </div>
@@ -976,7 +979,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="py-[6px] flex   gap-x-5">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
                         <div>
                             <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                         </div>
@@ -997,7 +1000,7 @@ background-clip: text;
                             </div>
                         </div>
                     </div>
-                    <div class="py-[6px] flex   gap-x-5">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
                         <div>
                             <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
                         </div>
@@ -1071,46 +1074,87 @@ background-clip: text;
                 <div class="grid grid-cols-2 gap-x-6 md:gap-x-0 md:flex md:justify-between md:max-w-[550px] w-full ">
                     <div>
                         <ul class="flex flex-col items-start gap-y-4">
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">About Us</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Fleet Services</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Partnerships</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Community</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Careers</a></li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">About Us</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fleet Services</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Partnerships</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Community</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Careers</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
                         <ul class="flex flex-col items-start gap-y-4">
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Fuel Delivery</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Wash</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Battery</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Tyres</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Engine Oil</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Insurance</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Rescue</a></li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fuel Delivery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Wash</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Battery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Tyres</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Engine Oil</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Insurance</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Rescue</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="hidden md:block">
                         <ul class="flex items-start flex-col gap-y-4">
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/faq.svg" alt="">
                                     FAQs</a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/call.svg" alt=""> 800
                                     692238</a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/whatsapp.svg" alt="">
                                     WhatsApp</a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/language.svg" alt="">
                                     <div class="flex items-center">
                                         EN <img src="./images/downicon.svg" alt="">
                                     </div>
                                 </a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/globe.svg" alt="">
                                     <div class="flex items-center ">
                                         UAE <img src="./images/downicon.svg" alt="">
@@ -1123,9 +1167,17 @@ background-clip: text;
             </div>
             <div class="flex items-center flex-col-reverse md:flex-row justify-between gap-y-5 md:gap-y-0">
                 <div class="flex items-start md:items-center gap-x-6">
-                    <p class="text-[13px] leading-[22px] text-[#7E878E] poppins">© 2024 CAFU. All Rights Reserved</p>
-                    <p class="text-[13px] leading-[22px] text-[#7E878E] poppins"><a href="#">Terms</a></p>
-                    <p class="text-[13px] leading-[22px] text-[#7E878E] poppins"><a href="#">Privacy</a></p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white cursor-pointer">
+                        © 2024 CAFU. All Rights Reserved</p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Terms</a>
+                    </p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Privacy</a>
+                    </p>
                 </div>
                 <div class="flex items-center gap-x-4">
                     <a href="#"><img src="./images/insta.svg" alt="logo"></a>
