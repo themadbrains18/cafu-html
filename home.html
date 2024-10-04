@@ -27,6 +27,35 @@
             .searchbaractive.active {
                 height: 200px; /* Adjust the height as needed */
             }
+            
+        }
+        .sidebar.activeside{
+            right: 0%;
+            transition: all 1s;
+        }
+        .sidebar{
+            right: -100%;
+            transition: all 1s;
+            position: fixed;
+            top: 0%;
+            height: 100%;
+            right: -100%;
+            max-width: 375px;
+            width: 100%;
+        }
+        .searchbarres.activeside{
+            right: 0%;
+            transition: all 1s;
+        }
+        .searchbarres{
+            right: -100%;
+            transition: all 1s;
+            position: fixed;
+            top: 0%;
+            height: 100%;
+            right: -100%;
+            max-width: 375px;
+            width: 100%;
         }
         body {
             box-sizing: border-box;
@@ -54,57 +83,127 @@
 </head>
 
 <body class="bg-black poppins">
-
-    <header class="container max-w-[1224px]">
-        <div class="border-[#14191D] border mt-[30px]  rounded-[40px]">
+    <header class="max-w-[1224px] w-full fixed z-10 left-1/2 transform -translate-x-1/2">
+        <div class=" relative border-[#14191D] border mt-[30px]  rounded-[40px] bg-black px-4">
             <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
                 <div class="flex items-center gap-5">
                     <img src="./images/arrow.png" class="lg:hidden rotate-[90deg]" alt="arrow">
                     <img src="/images/logo.png" alt="logo">
                 </div>
                 <div class="lg:flex gap-5 items-center hidden">
-                    <div class="flex items-center">
-                        <h2 class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] ">Services</h2>
-                        <img src="/images/arrow.png" alt="arrow">
+                    <!-- Dropdown 1 -->
+                    <div class="dropdown relative">
+                        <!-- Dropdown Button 1 -->
+                        <button id="dropdownButton1"
+                            class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                            <span class="text-[12px] leading-[18px]   font-normal py-[6px]]">For
+                                Business</span>
+                            <!-- Icon (Chevron Down) -->
+                            <svg id="dropdownIcon1" xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown Menu 1 -->
+                        <div id="dropdownMenu1"
+                            class="hidden absolute mt-[26px] w-48 bg-gray-800 text-white rounded-md shadow-lg z-20 ">
+                            <div class="flex flex-col gap-2 justify-center items-center">
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Consulting</a>
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Integration</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center">
-                        <h2 class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] ">Services</h2>
-                        <img src="/images/arrow.png" alt="arrow">
+
+                    <!-- Dropdown 2 -->
+                    <div class="dropdown relative">
+                        <!-- Dropdown Button 2 -->
+                        <button id="dropdownButton2"
+                            class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                            <span class="text-[12px] leading-[18px]   font-normal py-[6px]]">Solutions</span>
+                            <!-- Icon (Chevron Down) -->
+                            <svg id="dropdownIcon2" xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown Menu 2 -->
+                        <div id="dropdownMenu2"
+                            class="hidden absolute mt-[26px] w-48 bg-gray-800 text-white rounded-md shadow-lg z-20">
+                            <div class="flex flex-col gap-2 justify-center items-center">
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Consulting</a>
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Integration</a>
+                            </div>
+                        </div>
                     </div>
-                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+
+                    <!--  -->
+
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
                         Careers
                     </a>
-                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
                         Community
                     </a>
-                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0]     hover:text-[#4FC4CD]   font-normal py-[6px]"
+                        href="#">
                         About Us
                     </a>
-                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px]" href="#">
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
                         FAQs
                     </a>
                 </div>
-                <div class="flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center">
-                    <button
-                        class="py-[16px] hidden lg:block px-3 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]  max-w-[137px] w-full">Download
-                        app</button>
-                    <div class="rounded-[50px] search bg-[#262F36] p-[14px]">
+                <div class="relative flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center ">
+                    <!-- Button with hover -->
+                    <div class="group">
+                        <button
+                            class="py-[16px] group-hover:bg-white group-hover:text-black  duration-[0.5s] hidden lg:block px-3 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF] max-w-[137px] w-full">
+                            Download app
+                        </button>
+                        <!-- Div that appears on hover -->
+                        <div
+                            class="absolute left-0 top-[110%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 bg-white text-black p-4 rounded-lg shadow-lg z-10 max-w-[400px] w-full ">
+                            <div class="flex">
+                                <img class="max-w-[110px] h-[110px] w-full" src="" alt="">
+                                <div class="flex flex-col gap-[2px]">
+                                    <p>Scan to download CAFU app in your phone. <span>Or get it here:</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Search bar icon -->
+                    <div id="searchbarIcon" class="rounded-[50px] search cursor-pointer bg-[#262F36] p-[14px]">
                         <img src="/images/searchicon.png" alt="searchicon">
                     </div>
-                    <img class="lg:hidden" src="/images/sidebaricon.png" alt="sidebaricon">
+
+                    <!-- Sidebar icon (visible in mobile) -->
+                    <img id="sidebarIcon" class="lg:hidden" src="/images/sidebaricon.png" alt="sidebaricon">
                 </div>
+
             </div>
-            <div class="searchbaractive  w-full px-[50px]">
-                <div class="flex justify-end ">
-                    <img class="p-3" src="/images/closeicon.png" alt="closeicon">
+            <div class="searchbaractive hidden lg:block  w-full  px-5 md:px-[50px] ">
+                <div class=" closesearchbar flex justify-end pt-[30px] ">
+                    <img class="p-3 cursor-pointer " src="/images/closeicon.png" alt="closeicon">
                 </div>
-                <div class=" border-b border-[#323E48] flex gap-6 items-center  w-full">
+                <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
                     <img src="/images/searchicon.png" alt="searchicon">
                     <input placeholder="Search Blog" type="text"
-                        class="outline-none text-[#ADB2B6] w-full bg-black border-none pt-3 pb-6 px-5" name="" id="">
+                        class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
                 </div>
-                <div class="pt-[10px]">
-                    <ul class="flex gap-[30px] px-[68px] ">
+                <div class="pt-[10px] ">
+                    <ul class="flex gap-[30px] md:px-[68px]  flex-wrap">
                         <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
                         <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
                         <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
@@ -114,9 +213,9 @@
                         <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
                     </ul>
                 </div>
-                <div class="">
-                    <h2>Recent Searches</h2>
-                    <div class="flex gap-3">
+                <div class="mt-10">
+                    <h2 class="text-[14px] font-normal leading-5 text-[#ADB2B6]">Recent Searches</h2>
+                    <div class="flex gap-3 pb-[50px] flex-wrap max-[500px]:justify-center pt-2.5 ">
                         <button
                             class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
                             Fuel Delivery</button>
@@ -141,40 +240,132 @@
                 </div>
             </div>
         </div>
+
         <!-- Sidebar -->
-        <!-- <div class=" lg:hidden block fixed left-0 top-0 h-full w-64 bg-gray-900 text-white shadow-lg">
-            <div class="flex items-center justify-between p-4">
-                <h1 class="text-xl font-bold">CAFU</h1>
-                <button id="closeSidebar" class="text-white focus:outline-none">×</button>
+        <div class="lg:hidden">
+            <div id="sidebar" class="sidebar ">
+                <div class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px] ">
+                    <div class="border-b border-[#21292F] ">
+                        <div class="flex items-center justify-between mx-4 py-2.5 px-4">
+                            <a href="#">
+                                <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
+                            </a>
+                            <img class="" id="closeSidebar" src="/images/closeicon.png" alt="closeicon">
+                        </div>
+                    </div>
+                    <div class="overflow-scroll h-[calc(100%_-_100px)] ">
+                        <div
+                            class="flex flex-col gap-[30px] px-5 border-b border-[#21292F] pt-[40px] pb-[56px] items-center ">
+                            <div class="flex items-center">
+                                <h2
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] ">
+                                    Services
+                                </h2>
+                                <img src="/images/arrow.png" alt="arrow">
+                            </div>
+                            <div class="flex items-center">
+                                <h2
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s]  ">
+                                    Services
+                                </h2>
+                                <img src="/images/arrow.png" alt="arrow">
+                            </div>
+                            <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                Careers
+                            </a>
+                            <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                Community
+                            </a>
+                            <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                About Us
+                            </a>
+                            <a class="text-[12px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                FAQs
+                            </a>
+                        </div>
+                        <div class="flex gap-3 items-center justify-end sm:justify-center px-5 pt-[50px]">
+                            <button
+                                class="py-4 px-6 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]   w-full">
+                                Download app
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <nav class="mt-4">
-                <ul>
-                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
-                        <a href="#">Services <span class="text-gray-400">▼</span></a>
-                    </li>
-                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
-                        <a href="#">For Business <span class="text-gray-400">▼</span></a>
-                    </li>
-                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
-                        <a href="#">Careers</a>
-                    </li>
-                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
-                        <a href="#">Community</a>
-                    </li>
-                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
-                        <a href="#">About Us</a>
-                    </li>
-                    <li class="py-2 px-4 hover:bg-gray-700 transition duration-300">
-                        <a href="#">FAQs</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="mt-auto p-4">
-                <button class="w-full py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition duration-300">
-                    Download app
-                </button>
+        </div>
+
+        <!-- searchbarres -->
+        <div class="lg:hidden">
+            <div id="searchbarres" class="searchbarres ">
+                <div
+                    class="lg:hidden block w-full bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px]">
+                    <div class="border-b border-[#21292F] ">
+                        <div class="flex items-center justify-between mx-4 py-2.5 px-4">
+                            <a href="#">
+                                <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
+                            </a>
+                            <img class="" id="closesearchbar" src="/images/closeicon.png" alt="closeicon">
+                        </div>
+                    </div>
+                    <div class="overflow-scroll h-[calc(100%_-_100px)]">
+                        <div class="px-5 mt-[40px]">
+                            <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
+                                <img src="/images/searchicon.png" alt="searchicon">
+                                <input placeholder="Search Blog" type="text"
+                                    class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
+                            </div>
+                        </div>
+                        <div class="pt-[10px]">
+                            <ul class="flex gap-[30px] md:px-[68px]  flex-wrap px-5">
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                            </ul>
+                        </div>
+                        <div class="px-5 mt-[56px]">
+                            <h2 class="text-[14px] font-normal leading-5 text-[#ADB2B6]">Recent Searches</h2>
+                            <div class="flex gap-3 pb-[50px] flex-wrap max-[500px]:justify-center pt-2.5">
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
+                                    Fuel Delivery</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Wash</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Tyres</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Engine Oil</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Battery</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Insurance</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Rescue</button>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-center justify-end sm:justify-center px-5 pt-[50px]">
+                            <button
+                                class="py-4 px-6 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]   w-full">
+                                Download app
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> -->
+        </div>
+
     </header>
 
 
@@ -432,20 +623,107 @@
             </div>
         </div>
     </footer>
+
     <script>
         let searchbaractive = document.querySelector(".searchbaractive");
+        let closesearchbar = document.querySelector(".closesearchbar");
 
         document.querySelector(".search").addEventListener("click", function () {
             if (!searchbaractive.classList.contains("active")) {
-                // Get the full height of the content before setting it
                 let fullHeight = searchbaractive.scrollHeight + "px";
-                searchbaractive.style.height = fullHeight;  // Set dynamic height
+                searchbaractive.style.height = fullHeight;
                 searchbaractive.classList.add("active");
             } else {
-                searchbaractive.style.height = "0";  // Collapse the box
+                searchbaractive.style.height = "0";
                 searchbaractive.classList.remove("active");
             }
         });
+
+        closesearchbar.addEventListener("click", function () {
+            searchbaractive.style.height = "0";
+            searchbaractive.classList.remove("active");
+        });
+
+
+        const sidebar = document.getElementById("sidebar");
+        const sidebarIcon = document.getElementById("sidebarIcon");
+        const closeSidebarBtn = document.getElementById("closeSidebar");
+
+        // Open sidebar when search icon is clicked
+        sidebarIcon.addEventListener("click", () => {
+            sidebar.classList.toggle("activeside"); // Toggles visibility
+        });
+
+        // Close sidebar when close button is clicked
+        closeSidebarBtn.addEventListener("click", () => {
+            sidebar.classList.remove("activeside"); // Hides sidebar
+        });
+
+        const searchbarres = document.getElementById("searchbarres");
+        const searchbarIcon = document.getElementById("searchbarIcon");
+        const closesearchbarres = document.getElementById("closesearchbar");
+
+        // Open sidebar when search icon is clicked
+        searchbarIcon.addEventListener("click", () => {
+            searchbarres.classList.toggle("activeside"); // Toggles visibility
+        });
+
+        // Close sidebar when close button is clicked
+        closesearchbarres.addEventListener("click", () => {
+            searchbarres.classList.remove("activeside"); // Hides sidebar
+        });
+
+        // Dropdown 1 Logic
+        const dropdownButton1 = document.getElementById('dropdownButton1');
+        const dropdownMenu1 = document.getElementById('dropdownMenu1');
+        const dropdownIcon1 = document.getElementById('dropdownIcon1');
+        const dropdownText1 = dropdownButton1.querySelector('span'); // Select the span for dropdown 1
+
+        dropdownButton1.addEventListener('click', () => {
+            dropdownMenu1.classList.toggle('hidden'); // Toggle menu visibility
+            dropdownIcon1.classList.toggle('rotate-180'); // Rotate icon
+            dropdownButton1.classList.toggle('text-[#4FC4CD]'); // Change text and icon color
+            dropdownText1.classList.toggle('text-[#4FC4CD]'); // Change span text color when active
+        });
+
+        // Dropdown 2 Logic
+        const dropdownButton2 = document.getElementById('dropdownButton2');
+        const dropdownMenu2 = document.getElementById('dropdownMenu2');
+        const dropdownIcon2 = document.getElementById('dropdownIcon2');
+        const dropdownText2 = dropdownButton2.querySelector('span'); // Select the span for dropdown 2
+
+        dropdownButton2.addEventListener('click', () => {
+            dropdownMenu2.classList.toggle('hidden'); // Toggle menu visibility
+            dropdownIcon2.classList.toggle('rotate-180'); // Rotate icon
+            dropdownButton2.classList.toggle('text-[#4FC4CD]'); // Change text and icon color
+            dropdownText2.classList.toggle('text-[#4FC4CD]'); // Change span text color when active
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+            if (!dropdownButton1.contains(event.target)) {
+                dropdownMenu1.classList.add('hidden');
+                dropdownIcon1.classList.remove('rotate-180');
+                dropdownButton1.classList.remove('text-[#4FC4CD]');
+                dropdownText1.classList.remove('text-[#4FC4CD]'); // Remove active color from span
+            }
+            if (!dropdownButton2.contains(event.target)) {
+                dropdownMenu2.classList.add('hidden');
+                dropdownIcon2.classList.remove('rotate-180');
+                dropdownButton2.classList.remove('text-[#4FC4CD]');
+                dropdownText2.classList.remove('text-[#4FC4CD]'); // Remove active color from span
+            }
+        });
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 
