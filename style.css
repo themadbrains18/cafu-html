@@ -63,6 +63,7 @@ background-clip: text;
 
 body {
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 .poppins {
     font-family: "Poppins", sans-serif;
