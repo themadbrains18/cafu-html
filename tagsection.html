@@ -32,6 +32,9 @@
     .hiddenscroll::-webkit-scrollbar {
   display: none;
 }
+.common-hover{
+        @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
+    }
     @media screen and (max-width:640px) {
         .swiper-pagination-bullet-active{
         @apply !bg-white !w-[58px]
@@ -61,13 +64,29 @@
 </head>
 
 <body>
+    <section class="pt-10 lg:pt-20 bg-black">
+        <div class="container">
+            <div class="flex items-center justify-between gap-x-6">
+        
+                <div class=" items-center gap-x-[10px] flex-nowrap hidden tab:flex">
+            <img src="./images/breadcrum.svg" alt="icon">
+            <span class="poppins text-xs font-semibold text-[#DEE0E2] cursor-pointer text-nowrap">Back </span>
+            <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">/  Home</span>
+            <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">/  Blog  / </span>
+            <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">Fuel delivery</span>
+            <span class="poppins text-xs font-semibold text-[#DEE0E2] cursor-pointer text-nowrap">Automotive Batteries</span>
+                </div>
+            </div>
+        </div>
+            </section>
     <section class="py-10 lg:py-20 bg-black">
         <div class="container">
             <h2 class="text-left   capitalize poppins text-2xl tab:text-[40px] leading-[48px] text-[#ADB2B6]">
                 Tag:
                 <span class="text-[#EFEFF0] text-2xl  tab:text-[40px]  font-semibold">Automotive Batteries</span>
             </h2>
-            <div class="mt-8 md:mt-14 flex flex-col-reverse lg:flex-row justify-between gap-x-6 items-center gap-y-10 lg:gap-y-0 lg:items-start ">
+            <div
+                class="mt-8 md:mt-14 flex flex-col-reverse lg:flex-row justify-between gap-x-6 items-center gap-y-10 lg:gap-y-0 lg:items-start ">
                 <div class="lg:max-w-[392px] w-full p-5 rounded-3xl bg-[#111315]">
                     <div class="border-b border-[#21292F] pb-3">
                         <h3 class="text-xl font-semibold leading-7 text-[#EFEFF0]">Related Posts</h3>
@@ -117,7 +136,7 @@
                 </div>
                 <div class="md:max-w-[808px] w-full grid grid-cols-2 gap-6 max-[475px]:grid-cols-1 ">
 
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -135,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -153,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -171,7 +190,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -189,7 +208,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -207,7 +226,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -225,7 +244,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -243,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative ">
+                    <div class="relative common-hover">
                         <img src="./images/blog3.png" alt="">
                         <div class="absolute top-0 right-0 left-0 bottom-0 blogbg flex justify-center items-end">
                             <div class="p-6  ">
@@ -261,7 +280,7 @@
                             </div>
                         </div>
                     </div>
-           
+
                 </div>
             </div>
         </div>
@@ -275,7 +294,7 @@
                         Cafu Featured Posts
                     </h2>
                     <button
-                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4 leading-5 font-semibold text-[13px] flex items-center gap-x-2">View
+                        class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4 leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">View
                         All <img src="./images/arrow.svg" alt=""></button>
                 </div>
                 <div class="swiper-container relative overflow-hidden mt-8 md:mt-14">
@@ -443,46 +462,87 @@
                 <div class="grid grid-cols-2 gap-x-6 md:gap-x-0 md:flex md:justify-between md:max-w-[550px] w-full ">
                     <div>
                         <ul class="flex flex-col items-start gap-y-4">
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">About Us</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Fleet Services</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Partnerships</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Community</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Careers</a></li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">About Us</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fleet Services</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Partnerships</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Community</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Careers</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
                         <ul class="flex flex-col items-start gap-y-4">
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Fuel Delivery</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Wash</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Battery</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Tyres</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Engine Oil</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Car Insurance</a></li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins"><a href="#">Rescue</a></li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fuel Delivery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Wash</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Battery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Tyres</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Engine Oil</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Insurance</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Rescue</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="hidden md:block">
                         <ul class="flex items-start flex-col gap-y-4">
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/faq.svg" alt="">
                                     FAQs</a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/call.svg" alt=""> 800
                                     692238</a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/whatsapp.svg" alt="">
                                     WhatsApp</a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/language.svg" alt="">
                                     <div class="flex items-center">
                                         EN <img src="./images/downicon.svg" alt="">
                                     </div>
                                 </a>
                             </li>
-                            <li class="leading-5 text-[13px] text-[#7E878E]  poppins">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
                                 <a href="#" class="flex items-center gap-x-2"><img src="./images/globe.svg" alt="">
                                     <div class="flex items-center ">
                                         UAE <img src="./images/downicon.svg" alt="">
@@ -495,9 +555,17 @@
             </div>
             <div class="flex items-center flex-col-reverse md:flex-row justify-between gap-y-5 md:gap-y-0">
                 <div class="flex items-start md:items-center gap-x-6">
-                    <p class="text-[13px] leading-[22px] text-[#7E878E] poppins">© 2024 CAFU. All Rights Reserved</p>
-                    <p class="text-[13px] leading-[22px] text-[#7E878E] poppins"><a href="#">Terms</a></p>
-                    <p class="text-[13px] leading-[22px] text-[#7E878E] poppins"><a href="#">Privacy</a></p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white cursor-pointer">
+                        © 2024 CAFU. All Rights Reserved</p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Terms</a>
+                    </p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Privacy</a>
+                    </p>
                 </div>
                 <div class="flex items-center gap-x-4">
                     <a href="#"><img src="./images/insta.svg" alt="logo"></a>

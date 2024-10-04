@@ -13,6 +13,9 @@
         padding: 0 16px;
         width: 100%;
     }
+    .common-hover{
+        @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
+    }
     .searchbaractive {
         height: 0;
         overflow: hidden;
