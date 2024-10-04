@@ -96,7 +96,7 @@
 </head>
 
 <body class="bg-black poppins">
-    <header class="max-w-[1224px] w-full fixed z-10 left-1/2 transform -translate-x-1/2 px-4">
+    <header class="max-w-[1224px]  w-full fixed z-10 left-1/2 transform -translate-x-1/2 px-4">
 
         <div class=" relative border-[#14191D] border mt-[30px]  rounded-[40px] bg-black ">
             <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
@@ -210,18 +210,32 @@
 
                 <div class="relative flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center ">
                     <!-- Button with hover -->
-                    <div class="group">
+                    <div class="group pb-5 -mb-5">
                         <button
                             class="py-[16px] group-hover:bg-white group-hover:text-black  duration-[0.5s] hidden lg:block px-3 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF] max-w-[137px] w-full">
                             Download app
                         </button>
                         <!-- Div that appears on hover -->
                         <div
-                            class="absolute left-0 right-0 top-[110%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 bg-white text-black p-4 rounded-lg shadow-lg z-10 w-[400px]">
-                            <div class="flex w-full">
+                            class="absolute right-0 top-[110%] duration-[0.4s] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity  bg-white text-black py-2.5 px-4 rounded-lg shadow-lg z-10 w-[400px]">
+                            <div class="flex w-full gap-2">
                                 <img class="max-w-[110px] h-[110px] w-full" src="/images/qr.png" alt="qr">
-                                <div class="flex flex-col gap-[2px]">
-                                    <p>Scan to download CAFU app in your phone. <span>Or get it here:</span></p>
+                                <div class="flex flex-col gap-[2px] items-center ">
+                                    <p class="text-[13px] leading-6 font-semibold text-[#323E48]">Scan to download CAFU
+                                        app in
+                                        your phone. <a class="text-[#ADB2B6]" href="#">Or get it here:</a></p>
+                                    <div class="flex gap-2 items-center w-full">
+                                        <button
+                                            class="flex gap-1 p-3  bg-gray-200 rounded-[20px] items-center w-full justify-center">
+                                            <img src="/images/apple_logo.svg" alt="">
+                                            <span class="text-[13px] ">App Store</span>
+                                        </button>
+                                        <button
+                                            class="flex gap-1 p-3  bg-gray-200 rounded-[20px] items-center w-full justify-center">
+                                            <img src="/images/googleplay.svg" alt="">
+                                            <span class="text-[13px] ">App Store</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
