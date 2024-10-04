@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+          .container {
+        max-width: 1256px;
+        margin: 0 auto;
+        padding: 0 16px;
+        width: 100%;
+    }
+    
+        }
+      </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#DA373D',
+                        woodsmoke: "#111315"
+                    },
+                    screens: {
+                        tab: "500px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section class="bg-[url('/images/blogbg.png')] object-cover bg-center">
+
+    </section>
+</body>
+
+</html>
