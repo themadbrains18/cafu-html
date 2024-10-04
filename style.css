@@ -4,11 +4,64 @@
 
 
 @layer utilities {
-    * {
-        @apply p-0 m-0 box-border
+    .content-auto {
+        content-visibility: auto;
+    }
+    .container {
+        max-width: 1256px;
+        margin: 0 auto;
+        padding: 0 16px;
+        width: 100%;
+    }
+    .searchbaractive {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .searchbaractive.active {
+        height: 200px; /* Adjust the height as needed */
+    }
+    .blogbg{
+        background: linear-gradient(180deg, rgba(14, 15, 17, 0.10) 0%, rgba(14, 15, 17, 0.40) 35%, rgba(14, 15, 17, 0.75) 60%, rgba(14, 15, 17, 0.80) 100%);
+    }
+    .blogbg2{
+        background: linear-gradient(180deg, rgba(14, 15, 17, 0.10) 0%, rgba(14, 15, 17, 0.40) 35%, rgba(14, 15, 17, 0.75) 60%, rgba(14, 15, 17, 0.80) 100%);
+    }
+    .bannerbg{
+        background: linear-gradient(180deg, rgba(51, 62, 70, 0.60) 0%, rgba(21, 26, 30, 0.60) 100%);
+    }
+    .lineartext{
+        background: var(--Cafu-Colors-Linear-Athens-Gray-Blizzard-Blue, linear-gradient(90deg, #F7F7F8 0%, #93E7ED 100%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    }
+    .browsebg{
+        background: linear-gradient(180deg, rgba(14, 15, 17, 0.00) 0%, rgba(14, 15, 17, 0.25) 45.31%, rgba(14, 15, 17, 0.70) 82.81%, rgba(14, 15, 17, 0.85) 100%);
+    }
+    .swiperbg{
+        background: linear-gradient(0deg, #0E0F11 0%, #0E0F11 100%)
+    }
+    .swiper-pagination-bullet {
+        @apply min-w-[58px] rounded-[30px] bg-transparent
+    }
+    .swiper-pagination-bullet-active{
+        @apply bg-[#4FC4CD]
     }
 
-    .latestbg {
-        background: linear-gradient(180deg, rgba(51, 62, 70, 0.60) 0%, rgba(21, 26, 30, 0.60) 100%)
+    @media screen and (max-width:640px) {
+        .swiper-pagination-bullet-active{
+        @apply !bg-white !w-[58px]
+    }  
+    .swiper-pagination-bullet {
+        @apply min-w-[8px] rounded-[30px] bg-[#323E48]
     }
+    }
+
+body {
+    box-sizing: border-box;
+}
+.poppins {
+    font-family: "Poppins", sans-serif;
+}
 }
