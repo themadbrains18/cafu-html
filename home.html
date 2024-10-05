@@ -25,6 +25,9 @@
                 padding: 0 16px;
                 width: 100%;
             }
+            .bg{
+                background-color: white;
+            }
             .searchbaractive {
                 height: 0;
                 overflow: hidden;
@@ -35,6 +38,13 @@
             }
             
         }
+        /* #blacksearch{
+            display: none;
+        } */
+        .blacksearch1{display: none;}
+        .blacksearch{display: block;}
+        .graysearch{display: none !important;}
+        .graysearch1{display: block;}
         .sidebar.activeside{
             right: 0%;
             transition: all 1s;
@@ -52,6 +62,7 @@
         .searchbarres.activeside{
             right: 0%;
             transition: all 1s;
+            background-color: white;
         }
         .searchbarres{
             right: -100%;
@@ -207,7 +218,7 @@
 
                 <div class="dropdown relative  lg:block hidden ">
                     <!-- Dropdown Button 2 -->
-                    <button id="dropdownButton3"
+                    <button  id="dropdownButton3"
                         class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
                         <img src="/images/fb.svg" alt="" />
                         <span id="dropdownText" class="text-[12px] leading-[18px] font-normal py-[6px]">EN</span>
@@ -267,7 +278,8 @@
 
                     <!-- Search bar icon -->
                     <div id="searchbarIcon" class="rounded-[50px] search cursor-pointer bg-[#262F36] p-[14px]">
-                        <img src="/images/searchicon.png" alt="searchicon">
+                        <img id="graysearch" class="graysearch1" src="/images/searchicon.png" alt="searchicon">
+                        <img id="blacksearch" class="blacksearch1" src="/images/blacksearch.svg" alt="searchicon">
                     </div>
 
                     <!-- Sidebar icon (visible in mobile) -->
@@ -825,7 +837,8 @@
 
     <section class="py-10 lg:py-20">
         <div class="container">
-            <h1 class="text-2xl md:text-5xl poppins font-semibold leading-[58px] lineartext text-center">Browse by Category</h1>
+            <h1 class="text-2xl md:text-5xl poppins font-semibold leading-[58px] lineartext text-center">Browse by
+                Category</h1>
             <div class="mt-8 md:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[18px] gap-y-6 md:gap-6">
                 <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
@@ -1513,11 +1526,17 @@
 
         const searchbarres = document.getElementById("searchbarres");
         const searchbarIcon = document.getElementById("searchbarIcon");
+        const blacksearch = document.getElementById("blacksearch");
+        const graysearch = document.getElementById("graysearch");
         const closesearchbarres = document.getElementById("closesearchbar");
 
         // Open sidebar when search icon is clicked
         searchbarIcon.addEventListener("click", () => {
-            searchbarres.classList.toggle("activeside"); // Toggles visibility
+            searchbarres.classList.toggle("activeside");
+            searchbarIcon.classList.toggle("bg") // Toggles visibility
+            blacksearch.classList.toggle("blacksearch") // Toggles visibility
+            graysearch.classList.toggle("graysearch") // Toggles visibility
+            dropdownButton.classList.toggle("showlang") // Toggles visibility
         });
 
         // Close sidebar when close button is clicked
