@@ -761,7 +761,7 @@
                             class="swiper-button-prev1 !relative p-2 rounded-[20px] hidden tab:block bg-[#262F36] rotate-180 ">
                             <img src="./images/swiper.svg" alt="">
                         </div>
-                        <div class="tab:bg-[#21292F]  max-w-[268px] overflow-hidden  ">
+                        <div class="tab:bg-[#21292F]  max-w-[268px] overflow-hidden rounded-[30px]  ">
                             <div class="swiper-pagination  static flex flex-nowrap"></div>
                         </div>
                         <div class="swiper-button-next1 !relative p-2 rounded-[20px] hidden tab:block bg-[#262F36] ">
@@ -1528,6 +1528,7 @@
         const searchbarIcon = document.getElementById("searchbarIcon");
         const blacksearch = document.getElementById("blacksearch");
         const graysearch = document.getElementById("graysearch");
+        const closesearch = document.querySelector(".closesearchbar");
         const closesearchbarres = document.getElementById("closesearchbar");
 
         // Open sidebar when search icon is clicked
@@ -1542,6 +1543,13 @@
         // Close sidebar when close button is clicked
         closesearchbarres.addEventListener("click", () => {
             searchbarres.classList.remove("activeside"); // Hides sidebar
+            blacksearch.classList.remove("blacksearch") // Toggles visibility
+            graysearch.classList.remove("graysearch")
+        });
+        closesearch.addEventListener("click", () => {
+            blacksearch.classList.remove("blacksearch") // Toggles visibility
+            graysearch.classList.remove("graysearch")
+            searchbarIcon.classList.remove("bg")
         });
 
         // Dropdown 1 Logic
