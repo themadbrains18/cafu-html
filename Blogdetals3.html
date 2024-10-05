@@ -31,7 +31,12 @@
                 padding: 0 16px;
                 width: 100%;
             }
-           
+            .bgcolor{
+                background: radial-gradient(160.07% 122.49% at 61.98% -4.13%, #FFF 0%, #61BBC7 100%), radial-gradient(160.07% 122.49% at 61.98% -4.13%, #73EDF4 0%, #8EB9FF 100%);
+            }
+           .batterybg{
+            background: radial-gradient(160.07% 122.49% at 61.98% -4.13%, #73EDF4 0%, #8EB9FF 100%);
+           }
             
         }
         
@@ -268,11 +273,15 @@
                         everything from ignition to electronic systems. Let's delve into the intricacies of this vital
                         automotive component.</p>
                 </div>
-                <img class="lg:max-w-[782px] w-full" src="./images/blogdetails.png" alt="blogdetails">
+
+                <div
+                    class="flex md:flex-row flex-col bg-[#111315]  rounded-[30px] justify-between items-center py-5 px-10 ">
+                    <h2 class="text-[16px] text-white underline ">Get started in 3 steps</h2>
+                    <img src="./images/appinfo.png" class="w-full max-w-[376px]" alt="appinfo">
+                </div>
+
                 <div>
-                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Understanding the Heart of Your
-                        Vehicle: The Car
-                        Battery</h2>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Anatomy of a Car Battery</h2>
                     <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">A typical car battery is a robust,
                         rechargeable unit
                         housed in a durable plastic case. Inside, it comprises several key elements:</p>
@@ -297,6 +306,9 @@
                             to the vehicle’s electrical system.</li>
                     </ul>
                 </div>
+
+                <img class="lg:max-w-[782px] w-full" src="./images/blogdetails.png" alt="blogdetails">
+
                 <div>
                     <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">How It Works</h2>
                     <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">The primary function of a car battery is
@@ -321,6 +333,21 @@
                             vehicles, the battery assists in delivering precise amounts of fuel to the engine.</li>
                     </ul>
                 </div>
+
+                <div class="p-5 flex flex-col md:flex-row gap-[30px] bgcolor rounded-[30px] ">
+                    <img class="md:max-w-[312px] w-full rounded-[30px] " src="./images/reportimg.png" alt="reportimg">
+                    <div class="flex justify-center flex-col">
+                        <h2 class="text-[32px] text=[#121212] leading-8 font-semibold ">Our Commitment to a Sustainable
+                            Future</h2>
+                        <p class="text-[18px] font-normal leading-[26px] pt-4 pb-8 ">CAFU's Environmental, Social,
+                            and Governance
+                            Efforts Beyond Borders</p>
+                        <button
+                            class="bg-white rounded-2xl py-[10px] max-w-max px-5 tab:py-[14px] tab:px-4  leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">Get
+                            ESG Report 2024 <img src="./images/arrow.svg" alt=""></button>
+                    </div>
+                </div>
+
                 <div>
                     <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Maintenance and Longevity</h2>
                     <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">Proper care can significantly extend the
@@ -357,6 +384,15 @@
                             years, depending on usage and climate.</li>
                     </ul>
                 </div>
+
+                <div
+                    class="py-5 px-[40px] border-y border-[#262F36] flex flex-col md:flex-row  items-center justify-between">
+                    <button
+                        class="py-[13px] flex px-5 rounded-2xl border max-[768px]:mb-5 border-[#323E48] bg-[#0E0F11] text-[13px] leading-5 font-semibold text-[#EFEFF0] transition-all duration-200 hover:bg-[#323E48]">Rescue
+                    </button>
+                    <img src="./images/ambulance.png" alt="ambulance">
+                </div>
+
                 <div>
                     <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Choosing the Right Battery</h2>
                     <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">When replacing your car battery,
@@ -372,6 +408,20 @@
                             warranties often
                             reflect confidence in durability.</li>
                     </ul>
+                </div>
+
+                <div class="batterybg flex flex-col lg:flex-row rounded-[30px] p-5 md:py-10 md:pr-[60px] md:pl-10 ">
+                    <div class="flex justify-center flex-col mr-[33px]">
+                        <h2 class="text-[32px] text=[#121212] leading-8 font-semibold ">Our Commitment to a Sustainable
+                            Future</h2>
+                        <p class="text-[18px] font-normal leading-[26px] pt-4 pb-8 ">CAFU's Environmental, Social,
+                            and Governance
+                            Efforts Beyond Borders</p>
+                        <button
+                            class="bg-white rounded-2xl py-[10px] max-w-max px-5 tab:py-[14px] tab:px-4  leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">Get
+                            ESG Report 2024 <img src="./images/arrow.svg" alt=""></button>
+                    </div>
+                    <img class="max-w-[312px] w-full rounded-[30px] " src="./images/battery.png" alt="battery">
                 </div>
 
                 <div>
@@ -869,7 +919,7 @@
                 console.error("An error occurred:", error);
             }
         }
-        
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
