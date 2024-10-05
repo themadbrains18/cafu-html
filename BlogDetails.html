@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    </style>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .common-hover{
+        @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
+        
+               }
+               .bgleftsidecolor{  background: var(
+    --Cafu-Colors-Woodsmoke-Woodsmoke,
+    linear-gradient(0deg, #0e0f11 0%, #0e0f11 100%),
+    #0e0f11
+  ); }
+            .container {
+                max-width: 1256px;
+                margin: 0 auto;
+                padding: 0 16px;
+                width: 100%;
+            }
+            
+            
+        }
+        .accordion-content {
+            overflow: hidden;
+            height: 0; /* Initially set to zero to hide content */
+            transition: height 0.3s ease;
+        }
+        body {
+            box-sizing: border-box;
+        }
+        .poppins {
+            font-family: "Poppins", sans-serif;
+        } 
+     
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#DA373D',
+                        woodsmoke: "#111315"
+                    },
+                    screens: {
+                        tab: "500px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-black poppins">
+    <section>
+        <img class="md:hidden w-full max-w-[768px]" src="/images/blogbannerres.png" alt="blogbannerres">
+        <img class="hidden md:block" src="/images/blogbg.png" alt="blogbg">
+    </section>
+
+    <section>
+        <div class="pt-[64px] hidden md:block  bg-black">
+            <div class="container">
+                <div class="flex items-center justify-between gap-x-6">
+
+                    <div class=" items-center gap-x-[10px] flex-nowrap  flex">
+                        <img src="./images/breadcrum.svg" alt="icon">
+                        <span class="poppins text-xs font-semibold text-[#DEE0E2] cursor-pointer text-nowrap">Back
+                        </span>
+                        <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">/
+                            Home</span>
+                        <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">/ Blog /
+                        </span>
+                        <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">Fuel
+                            Delivery /
+                        </span>
+                        <span class="poppins text-xs font-semibold text-[#DEE0E2] cursor-pointer text-nowrap">Blog
+                            Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <div class="pt-[64px] flex flex-col  ">
+            <div class="flex items-center pb-8 md:pb-10">
+                <div class="flex gap-3 items-center ">
+                    <img class="lg:w-[40px] w-[20px]" src="/images/blogimg.png" alt="blogimg">
+                    <span
+                        class=" text-[10px] lg:text-[14px] font-normal lg:leading-5 leading-[14px] text-white text-nowrap ">Mark
+                        Zane</span>
+                </div>
+                <span class="border h-[12px] w-[0.5px] border-l mx-2 md:mx-3  "></span>
+                <h2 class="text-[12px] font-normal text-[#4FC4CD]">Designing</h2>
+                <span class="border h-[12px] w-[0.5px] border-l mx-2 md:mx-3  "></span>
+                <h2 class=" text-[10px] lg:text-[14px] font-normal lg:leading-5 leading-[14px] text-white text-nowrap ">
+                    5 minutes
+                    read</h2>
+                <h2
+                    class=" text-[10px] lg:text-[14px] font-normal lg:leading-5 leading-[14px] text-white text-nowrap ml-2 md:mr-3 ">
+                    12th June,
+                    2022</h2>
+            </div>
+            <h2 class="text-[20px] lg:text-[40px] leading-[48px] font-semibold text-[#EFEFF0]">Understanding the Heart
+                of
+                Your Vehicle: The
+                Car Battery
+            </h2>
+        </div>
+    </section>
+
+
+    <div class="lg:hidden bgleftsidecolor flex-col gap-6 py-5 px-4 overflow-y-scroll">
+        <h2 class="text-[16px] leading-[24px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">Table Of Content</h2>
+        <div class="flex gap-4 pt-5 ">
+            <h2 class="text-[#FFFFFF] lg:text-[16px] text-[12px] font-semibold text-nowrap leading-6">Anatomy of a Car
+                Battery
+            </h2>
+            <ul class="flex items-center  gap-4 flex-row  overflow-scroll">
+                <li class="list-none text-nowrap text-[#ADB2B6] text-[12px] font-normal">How It Works</li>
+                <li class="list-none text-nowrap text-[#ADB2B6] text-[12px] font-normal">How It Works</li>
+                <li class="list-none text-nowrap text-[#ADB2B6] text-[12px] font-normal">How It Works</li>
+                <li class="list-none text-nowrap text-[#ADB2B6] text-[12px] font-normal">How It Works</li>
+                <li class="list-none text-nowrap text-[#ADB2B6] text-[12px] font-normal">How It Works</li>
+                <li class="list-none text-nowrap text-[#ADB2B6] text-[12px] font-normal">How It Works</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section class="container">
+        <div class="flex gap-10 lg:gap-[50px] lg:flex-row flex-col-reverse pb-10 lg:pb-20 pt-8 lg:pt-[64px]">
+            <div class="flex gap-[50px] ">
+                <div class="py-5 px-4 bgleftsidecolor rounded-[24px] lg:w-[375px] ">
+                    <div class="flex flex-col gap-8 lg:space-y-[40px]">
+                        <div class="lg:flex flex-col   lg:gap-6 gap-5 hidden">
+                            <h2
+                                class="lg:text-[16px] text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">
+                                Table
+                                Of
+                                Content
+                            </h2>
+                            <div>
+                                <h2 class="text-[#FFFFFF] text-[12px] font-semibold leading-[18px]">Anatomy of a Car
+                                    Battery
+                                </h2>
+                                <ul class="flex space-y-[16px] flex-col pt-4 ">
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col   lg:gap-6 gap-5">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">
+                                Share Post
+                            </h2>
+                            <div class="flex gap-[16px]">
+                                <img class="" src="/images/linkin.svg" alt="linkin">
+                                <img class="" src="/images/fb.svg" alt="fb">
+                                <img class="" src="/images/tiktok.svg" alt="tiktok">
+                                <img class="" src="/images/insta.svg" alt="insta">
+                                <img class="" src="/images/yt.svg" alt="yt">
+                            </div>
+                        </div>
+
+
+                        <div class="flex flex-col   lg:gap-6 gap-5">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">
+                                Tags
+                            </h2>
+                            <div class="flex flex-wrap gap-[6px]">
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  lg:text-[12px text-[10px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Battery Troubleshooting
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  lg:text-[12px text-[10px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Car Battery Replacement
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  lg:text-[12px text-[10px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Car Battery Maintenance
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  lg:text-[12px text-[10px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Automotive Batteries
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  lg:text-[12px text-[10px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Battery Care Tips
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  text-[12px] leading-[15px] text-[#ADB2B6] rounded-[20px]">
+                                    Battery Performance
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  lg:text-[12px text-[10px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Battery Charging
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="flex flex-col   lg:gap-6 gap-5">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">Table
+                                Related Posts
+                            </h2>
+                            <div>
+                                <h2 class="text-[#FFFFFF] text-[16px] font-semibold leading-6">Anatomy of a Car Battery
+                                </h2>
+                                <ul class="flex space-y-[16px] flex-col pt-4 ">
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How Car Batteries Work
+                                    </li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Choosing the Right Car
+                                        Battery</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Maintaining Your Car
+                                        Battery</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Common Signs of a
+                                        Failing Car Battery</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">The Impact of
+                                        Temperature on Car Batteries</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Difference Between
+                                        Lead-Acid and Lithium-Ion Batteries</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Advancements in Car
+                                        Battery Technology</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">DIY Battery Testing
+                                        and Replacement</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Environmental Impact
+                                        of Car Batteries</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Future Trends in
+                                        Automotive Power Systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:space-y-[40px] space-y-[32px]">
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Understanding the Heart of Your
+                        Vehicle: The Car
+                        Battery</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">In the realm of automotive essentials,
+                        few components
+                        are as
+                        crucial as the car battery. Often
+                        overlooked until it fails, the battery serves as the heartbeat of your vehicle, powering
+                        everything from ignition to electronic systems. Let's delve into the intricacies of this vital
+                        automotive component.</p>
+                </div>
+                <img class="lg:max-w-[782px] w-full" src="/images/blogdetails.png" alt="blogdetails">
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Understanding the Heart of Your
+                        Vehicle: The Car
+                        Battery</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">A typical car battery is a robust,
+                        rechargeable unit
+                        housed in a durable plastic case. Inside, it comprises several key elements:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium"> Lead Plates: These
+                            are the core
+                            components
+                            responsible for storing and releasing electrical
+                            energy.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Electrolyte
+                            Solution: A mixture of
+                            sulfuric acid
+                            and water that facilitates the flow of ions
+                            between the lead plates, enabling the battery to generate electricity.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Battery Case:
+                            Provides structural
+                            support and
+                            houses the internal components securely.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Terminal Posts:
+                            Connectors that
+                            link the battery
+                            to the vehicle’s electrical system.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">How It Works</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">The primary function of a car battery is
+                        to provide the
+                        initial burst of electricity required to start the engine. This process, known as cranking amps
+                        (CA), relies on chemical reactions within the battery. When you turn the key, the battery
+                        delivers a surge of electricity to the starter motor, which ignites the engine.</p>
+                    <p class="text-[#DEE0E2] py-3 text-[18px] ">Beyond starting the vehicle, the battery plays a pivotal
+                        role in powering:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium"> Electrical
+                            Systems: Lights, radio,
+                            air conditioning, and other onboard electronics.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Ignition System:
+                            Ensuring a
+                            consistent spark for combustion in gasoline engines.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Battery Case:
+                            Provides structural
+                            support and houses the internal components securely.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Fuel Injection
+                            Systems: In modern
+                            vehicles, the battery assists in delivering precise amounts of fuel to the engine.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Maintenance and Longevity</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">Proper care can significantly extend the
+                        life of your
+                        car battery:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium"> Regular
+                            Inspections: Check for
+                            corrosion around terminals and ensure they are clean and tightly connected.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Charging: If your
+                            vehicle isn’t
+                            used frequently, consider using a trickle charger to maintain optimal charge levels.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Extreme
+                            Temperatures: Batteries can
+                            struggle in both extreme heat and cold, affecting performance and longevity. Insulating or
+                            shielding your battery can mitigate these effects.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Signs of Battery Trouble</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">Recognizing symptoms of a failing battery
+                        can prevent
+                        unexpected breakdowns:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium"> Slow Engine Crank:
+                            If your engine
+                            turns over sluggishly when starting, it may indicate a weakening battery.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Dashboard Warnings:
+                            Modern vehicles
+                            often display a battery warning light if there’s an issue.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Age: Most car
+                            batteries last 3-5
+                            years, depending on usage and climate.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Choosing the Right Battery</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">When replacing your car battery,
+                        consider:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium"> Compatibility:
+                            Ensure it matches
+                            your vehicle’s specifications in terms of size, voltage, and capacity.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Quality: Opt for
+                            reputable brands
+                            known for reliability.</li>
+                        <li class=" text-[16px] lg:text-[18px] text-[#DEE0E2] leading-6 font-medium">Warranty: Longer
+                            warranties often
+                            reflect confidence in durability.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-[20px] lg:text-[24px] leading-8  text-[#FFFFFF]">Conclusion</h2>
+                    <p class="text-[#DEE0E2] pt-4 lg:text-[18px] text-[16px] ">The car battery is a cornerstone of
+                        automotive
+                        functionality, powering essential systems that keep your vehicle running smoothly. Understanding
+                        its role, performing regular maintenance, and knowing when to replace it are key to ensuring
+                        reliable performance and avoiding inconvenient breakdowns. By prioritizing battery health, you
+                        safeguard both your vehicle and your peace of mind on the road.</p>
+                    <p class="text-[#DEE0E2] pt-3 text-[18px] ">Whether you're a seasoned driver or new to car
+                        ownership, appreciating the importance of your car battery is fundamental to maintaining a
+                        well-functioning vehicle. Keep your battery charged, maintain it regularly, and it will continue
+                        to serve as the dependable power source your vehicle needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="py-10 lg:py-20">
+            <h2 class=" text-[24px] lg:text-[32px] leading-[43px] font-semibold  text-[#EFEFF0]">Frequently
+                Asked
+                Questions</h2>
+            <div class=" py-8 md:py-10">
+                <div class=" py-5 md:py-8 border-b border-[#323E48] ">
+                    <div class=" accordion-header flex justify-between items-center  cursor-pointer">
+                        <h2 class="text-[16px] leading-6 font-semibold text-[#DEE0E2]">How do I reschedule my order?
+                        </h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="overflow-hidden h-0 duration-[0.3s] ">
+                        <h2 class="text-white  text-sm pt-2">
+                            The car battery is a cornerstone of automotive functionality, powering essential systems
+                            that
+                            keep your vehicle running smoothly. Understanding its role, performing regular maintenance,
+                            and
+                            knowing when to replace it are key to ensuring reliable performance and avoiding
+                            inconvenient
+                            breakdowns. By prioritizing battery health, you safeguard both your vehicle and your peace
+                            of
+                            mind on the road.
+                        </h2>
+                    </div>
+                </div>
+                <div class=" py-5 md:py-8 border-b border-[#323E48] ">
+                    <div class=" accordion-header flex justify-between items-center cursor-pointer">
+                        <h2 class="text-[16px] leading-6 font-semibold text-[#DEE0E2]">Does the Battery Service
+                            technician
+                            call when they arrive?</h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="overflow-hidden h-0 duration-[0.3s] ">
+                        <h2 class="text-white  text-sm pt-2">
+                            The car battery is a cornerstone of automotive functionality, powering essential systems
+                            that
+                            keep your vehicle running smoothly. Understanding its role, performing regular maintenance,
+                            and
+                            knowing when to replace it are key to ensuring reliable performance and avoiding
+                            inconvenient
+                            breakdowns. By prioritizing battery health, you safeguard both your vehicle and your peace
+                            of
+                            mind on the road.
+                        </h2>
+                    </div>
+                </div>
+                <div class=" py-5 md:py-8 border-b border-[#323E48] ">
+                    <div class=" accordion-header flex justify-between items-center cursor-pointer">
+                        <h2 class="text-[16px] leading-6 font-semibold text-[#DEE0E2]">How do I make changes to an
+                            active
+                            Battery Service order?</h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="overflow-hidden h-0 duration-[0.3s] ">
+                        <h2 class="text-white  text-sm pt-2">
+                            The car battery is a cornerstone of automotive functionality, powering essential systems
+                            that
+                            keep your vehicle running smoothly. Understanding its role, performing regular maintenance,
+                            and
+                            knowing when to replace it are key to ensuring reliable performance and avoiding
+                            inconvenient
+                            breakdowns. By prioritizing battery health, you safeguard both your vehicle and your peace
+                            of
+                            mind on the road.
+                        </h2>
+                    </div>
+                </div>
+                <div class=" py-5 md:py-8 border-b border-[#323E48] ">
+                    <div class=" accordion-header flex justify-between items-center cursor-pointer">
+                        <h2 class="text-[16px] leading-6 font-semibold text-[#DEE0E2]">How do I pay for the Battery
+                            Service?
+                        </h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="overflow-hidden h-0 duration-[0.3s] ">
+                        <h2 class="text-white  text-sm pt-2">
+                            The car battery is a cornerstone of automotive functionality, powering essential systems
+                            that
+                            keep your vehicle running smoothly. Understanding its role, performing regular maintenance,
+                            and
+                            knowing when to replace it are key to ensuring reliable performance and avoiding
+                            inconvenient
+                            breakdowns. By prioritizing battery health, you safeguard both your vehicle and your peace
+                            of
+                            mind on the road.
+                        </h2>
+                    </div>
+                </div>
+                <div class=" py-5 md:py-8 border-b border-[#323E48] ">
+                    <div class=" accordion-header flex justify-between items-center cursor-pointer">
+                        <h2 class="text-[16px] leading-6 font-semibold text-[#DEE0E2]">How does the warranty work?</h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="overflow-hidden h-0 duration-[0.3s] ">
+                        <h2 class="text-white  text-sm pt-2">
+                            The car battery is a cornerstone of automotive functionality, powering essential systems
+                            that
+                            keep your vehicle running smoothly. Understanding its role, performing regular maintenance,
+                            and
+                            knowing when to replace it are key to ensuring reliable performance and avoiding
+                            inconvenient
+                            breakdowns. By prioritizing battery health, you safeguard both your vehicle and your peace
+                            of
+                            mind on the road.
+                        </h2>
+                    </div>
+                </div>
+                <div class=" py-5 md:py-8 border-b border-[#323E48] ">
+                    <div class=" accordion-header flex justify-between items-center cursor-pointer">
+                        <h2 class="text-[16px] leading-6 font-semibold text-[#DEE0E2]">How does the Battery Change
+                            pricing
+                            work?</h2>
+                        <img src="/images/arrow.png" alt="arrow">
+                    </div>
+                    <div class="overflow-hidden h-0 duration-[0.3s] ">
+                        <h2 class="text-white  text-sm pt-2">
+                            The car battery is a cornerstone of automotive functionality, powering essential systems
+                            that
+                            keep your vehicle running smoothly. Understanding its role, performing regular maintenance,
+                            and
+                            knowing when to replace it are key to ensuring reliable performance and avoiding
+                            inconvenient
+                            breakdowns. By prioritizing battery health, you safeguard both your vehicle and your peace
+                            of
+                            mind on the road.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="py-[13px]    mx-auto flex   px-5 rounded-2xl border border-[#323E48] bg-[#0E0F11] text-[13px] leading-5 font-semibold text-[#EFEFF0] transition-all duration-200 hover:bg-[#323E48]">Load
+                more</button>
+        </div>
+    </section>
+
+
+    <section class="py-10  lg:py-20 bg-black">
+        <div class="container">
+            <div>
+                <h2
+                    class="text-center text-[#EFEFF0] text-2xl  md:text-5xl leading-[30px] font-semibold md:leading-[58px] capitalize poppins">
+                    Blog Articles
+                </h2>
+                <div class="mt-8 md:mt-14 grid lg:grid-cols-2  md:gap-6">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#21292F]  py-14">
+        <div class="max-w-[1286px] w-full py-0 px-4 my-0 mx-auto">
+            <div
+                class="flex justify-between flex-col md:flex-row  gap-x-8 border-b border-[#323E48] pb-12 mb-12 gap-y-12 md:gap-y-0">
+                <div class="flex flex-col gap-y-8 md:gap-y-[22px] items-start md:max-w-[642px] w-full">
+                    <a href="#">
+                        <img src="./images/cafulogo.svg" alt="logo">
+                    </a>
+                    <div class=" items-center gap-x-3 hidden md:flex ">
+                        <a href="#">
+                            <img src="./images/ioslogo.svg" alt="logo">
+                        </a>
+                        <a href="#">
+                            <img src="./images//androidlogo.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="md:hidden w-full">
+                        <ul class="grid grid-cols-2  gap-y-[14px] gap-x-6">
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/faq.svg" alt="">
+                                    FAQs</a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/call.svg" alt=""> 800
+                                    692238</a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/whatsapp.svg" alt="">
+                                    WhatsApp</a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/language.svg" alt="">
+                                    <div class="flex items-center">
+                                        EN <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/globe.svg" alt="">
+                                    <div class="flex items-center">
+                                        UAE <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-x-6 md:gap-x-0 md:flex md:justify-between md:max-w-[550px] w-full ">
+                    <div>
+                        <ul class="flex flex-col items-start gap-y-4">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">About Us</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fleet Services</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Partnerships</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Community</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Careers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="flex flex-col items-start gap-y-4">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fuel Delivery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Wash</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Battery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Tyres</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Engine Oil</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Insurance</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Rescue</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:block">
+                        <ul class="flex items-start flex-col gap-y-4">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/faq.svg" alt="">
+                                    FAQs</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/call.svg" alt=""> 800
+                                    692238</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/whatsapp.svg" alt="">
+                                    WhatsApp</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/language.svg" alt="">
+                                    <div class="flex items-center">
+                                        EN <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/globe.svg" alt="">
+                                    <div class="flex items-center ">
+                                        UAE <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center flex-col-reverse md:flex-row justify-between gap-y-5 md:gap-y-0">
+                <div class="flex items-start md:items-center gap-x-6">
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white cursor-pointer">
+                        © 2024 CAFU. All Rights Reserved</p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Terms</a>
+                    </p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Privacy</a>
+                    </p>
+                </div>
+                <div class="flex items-center gap-x-4">
+                    <a href="#"><img src="./images/insta.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/fb.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/linkin.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/tiktok.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/yt.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/twitterx.svg" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        // Attach the sidebarAccordion function to each header
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', sidebarAccordion);
+        });
+
+
+        function sidebarAccordion(e) {
+            try {
+                // Get the sibling element (accordion content)
+                let sibling = e.currentTarget.nextElementSibling;
+
+                // Check if the sibling element exists and is valid
+                if (sibling) {
+                    // Get the height of the sibling element
+                    let getHeight = sibling.scrollHeight;
+
+                    // Check if the style attribute is set
+                    if (!sibling.style.height || sibling.style.height === '0px') {
+                        // Set the height of the sibling element to reveal content
+                        sibling.style.height = `${getHeight}px`;
+                    } else {
+                        // Reset the height to 0 to hide the content
+                        sibling.style.height = '0px';
+                    }
+                } else {
+                    // Show an error message if the sibling element is not found or invalid
+                    console.error("Sibling element not found or invalid.");
+                }
+            } catch (error) {
+                // Log an error message if an exception occurs
+                console.error("An error occurred:", error);
+            }
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            //   loop: true,
+            //   slidesperview:1,
+            slidesPerView: 1.2, // Display 3 slides at once
+            spaceBetween: 10, // Add space between slides (optional)
+            loop: true,
+            // If you want pagination or navigation
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next1',
+                prevEl: '.swiper-button-prev1',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,  // 1 slide for screens 640px and below
+                },
+                768: {
+                    slidesPerView: 3,  // 2 slides for screens 768px and above
+                },
+                1024: {
+                    slidesPerView: 4,  // 3 slides for screens 1024px and above
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
