@@ -25,6 +25,9 @@
                 padding: 0 16px;
                 width: 100%;
             }
+            .bg{
+                background-color: white;
+            }
             .searchbaractive {
                 height: 0;
                 overflow: hidden;
@@ -35,6 +38,13 @@
             }
             
         }
+        /* #blacksearch{
+            display: none;
+        } */
+        .blacksearch1{display: none;}
+        .blacksearch{display: block;}
+        .graysearch{display: none !important;}
+        .graysearch1{display: block;}
         .sidebar.activeside{
             right: 0%;
             transition: all 1s;
@@ -52,6 +62,7 @@
         .searchbarres.activeside{
             right: 0%;
             transition: all 1s;
+            background-color: white;
         }
         .searchbarres{
             right: -100%;
@@ -75,6 +86,30 @@
         .poppins {
             font-family: "Poppins", sans-serif;
         } 
+        .swiperbg{
+        background: linear-gradient(0deg, #0E0F11 0%, #0E0F11 100%)
+    }
+
+    .swiper-pagination-bullet {
+        @apply min-w-[58px] rounded-[30px] bg-transparent
+    }
+    .swiper-pagination-bullet-active{
+        @apply bg-[#4FC4CD]
+    }
+    .hiddenscroll::-webkit-scrollbar {
+  display: none;
+}
+.common-hover{
+        @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
+    }
+    @media screen and (max-width:640px) {
+        .swiper-pagination-bullet-active{
+        @apply !bg-white !w-[58px]
+    }  
+    .swiper-pagination-bullet {
+        @apply min-w-[8px] rounded-[30px] bg-[#323E48]
+    }
+    }
      
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -183,7 +218,7 @@
 
                 <div class="dropdown relative  lg:block hidden ">
                     <!-- Dropdown Button 2 -->
-                    <button id="dropdownButton3"
+                    <button  id="dropdownButton3"
                         class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
                         <img src="/images/fb.svg" alt="" />
                         <span id="dropdownText" class="text-[12px] leading-[18px] font-normal py-[6px]">EN</span>
@@ -243,7 +278,8 @@
 
                     <!-- Search bar icon -->
                     <div id="searchbarIcon" class="rounded-[50px] search cursor-pointer bg-[#262F36] p-[14px]">
-                        <img src="/images/searchicon.png" alt="searchicon">
+                        <img id="graysearch" class="graysearch1" src="/images/searchicon.png" alt="searchicon">
+                        <img id="blacksearch" class="blacksearch1" src="/images/blacksearch.svg" alt="searchicon">
                     </div>
 
                     <!-- Sidebar icon (visible in mobile) -->
@@ -442,6 +478,9 @@
         </div>
     </header>
 
+    <section class="pt-24 lg:pt-[164px]  bg-black">
+        <div class="container">
+            <div class="flex items-center justify-between gap-x-6">
 
 
     <section class="py-10 lg:py-20 bg-black">
@@ -456,7 +495,7 @@
                         class="bg-white rounded-2xl py-[10px] px-5 tab:py-[14px] tab:px-4  leading-5 font-semibold text-[13px] flex items-center gap-x-2 transition-all duration-200 hover:bg-[#F7F7F8e6]">View
                         All <img src="./images/arrow.svg" alt=""></button>
                 </div>
-                <div class="grid mt-8 min-[991px]:grid-cols-2 gap-3 tab:gap-6">
+                <div class="grid mt-8 md:mt-14 min-[991px]:grid-cols-2 gap-3 tab:gap-6">
                     <div class="rounded-[30px] bannerbg p-4 hidden tab:block">
                         <div>
                             <img src="./images/latestbg.png" alt="">
@@ -785,8 +824,9 @@
     </section>
     <section class="py-10 lg:py-20">
         <div class="container">
-            <h1 class="md:text-5xl poppins font-semibold leading-[58px] lineartext text-center">Browse by Category</h1>
-            <div class="mt-8 md:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <h1 class="text-2xl md:text-5xl poppins font-semibold leading-[58px] lineartext text-center">Browse by
+                Category</h1>
+            <div class="mt-8 md:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[18px] gap-y-6 md:gap-6">
                 <div class=" bg-cyan-200 rounded-3xl p-4 md:p-[26px]     relative common-hover">
                     <img src="./images/iconlogo.svg"
                         class="absolute right-0 top-[-32px] md:top-[-48px] max-w-[100px] md:max-w-full" alt="logo">
@@ -1473,11 +1513,17 @@
 
         const searchbarres = document.getElementById("searchbarres");
         const searchbarIcon = document.getElementById("searchbarIcon");
+        const blacksearch = document.getElementById("blacksearch");
+        const graysearch = document.getElementById("graysearch");
         const closesearchbarres = document.getElementById("closesearchbar");
 
         // Open sidebar when search icon is clicked
         searchbarIcon.addEventListener("click", () => {
-            searchbarres.classList.toggle("activeside"); // Toggles visibility
+            searchbarres.classList.toggle("activeside");
+            searchbarIcon.classList.toggle("bg") // Toggles visibility
+            blacksearch.classList.toggle("blacksearch") // Toggles visibility
+            graysearch.classList.toggle("graysearch") // Toggles visibility
+            dropdownButton.classList.toggle("showlang") // Toggles visibility
         });
 
         // Close sidebar when close button is clicked
@@ -1622,10 +1668,8 @@
         const swiper = new Swiper('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
-            //   loop: true,
-            //   slidesperview:1,
-            slidesPerView: 1.2, // Display 3 slides at once
-            spaceBetween: 10, // Add space between slides (optional)
+            slidesPerView: 1.2,
+            spaceBetween: 24,
             loop: true,
             // If you want pagination or navigation
             pagination: {
