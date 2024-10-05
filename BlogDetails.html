@@ -5,21 +5,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    </style>
     <style type="text/tailwindcss">
         @layer utilities {
-          .content-auto {
-            content-visibility: auto;
-          }
-          .container {
-        max-width: 1256px;
-        margin: 0 auto;
-        padding: 0 16px;
-        width: 100%;
-    }
-    
+            .content-auto {
+                content-visibility: auto;
+            }
+            .common-hover{
+        @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
+        
+               }
+               .bgleftsidecolor{  background: var(
+    --Cafu-Colors-Woodsmoke-Woodsmoke,
+    linear-gradient(0deg, #0e0f11 0%, #0e0f11 100%),
+    #0e0f11
+  ); }
+            .container {
+                max-width: 1256px;
+                margin: 0 auto;
+                padding: 0 16px;
+                width: 100%;
+            }
+            .searchbaractive {
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+            }
+            .searchbaractive.active {
+                height: 200px; 
+            }
+            
         }
-      </style>
+        .sidebar.activeside{
+            right: 0%;
+            transition: all 1s;
+        }
+        .sidebar{
+            right: -100%;
+            transition: all 1s;
+            position: fixed;
+            top: 0%;
+            height: 100%;
+            right: -100%;
+            max-width: 375px;
+            width: 100%;
+        }
+        .searchbarres.activeside{
+            right: 0%;
+            transition: all 1s;
+        }
+        .searchbarres{
+            right: -100%;
+            transition: all 1s;
+            position: fixed;
+            top: 0%;
+            height: 100%;
+            right: -100%;
+            max-width: 375px;
+            width: 100%;
+        }
+     
+        .accordion-content {
+            overflow: hidden;
+            height: 0; /* Initially set to zero to hide content */
+            transition: height 0.3s ease;
+        }
+        body {
+            box-sizing: border-box;
+        }
+        .poppins {
+            font-family: "Poppins", sans-serif;
+        } 
+     
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -38,10 +101,1118 @@
     </script>
 </head>
 
-<body>
-    <section class="bg-[url('/images/blogbg.png')] object-cover bg-center">
+<body class="bg-black poppins">
 
+    <header class="max-w-[1224px]  w-full fixed z-10 left-1/2 transform -translate-x-1/2 px-4">
+
+        <div class=" relative border-[#14191D] border mt-[30px]  rounded-[40px] bg-black ">
+            <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
+                <div class="flex items-center gap-5">
+                    <img src="./images/arrow.png" class="lg:hidden rotate-[90deg]" alt="arrow">
+                    <img src="/images/logo.png" alt="logo">
+                </div>
+                <div class="lg:flex gap-5 items-center hidden">
+                    <!-- Dropdown 1 -->
+                    <div class="dropdown relative ">
+                        <!-- Dropdown Button 1 -->
+                        <button id="dropdownButton1"
+                            class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                            <span class="text-[12px] leading-[18px]   font-normal py-[6px]]">For
+                                Business</span>
+                            <!-- Icon (Chevron Down) -->
+                            <svg id="dropdownIcon1" xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown Menu 1 -->
+                        <div id="dropdownMenu1"
+                            class="hidden absolute mt-[26px] w-48 bg-[#14191D] text-white rounded-md shadow-lg z-20 ">
+                            <div class="flex flex-col gap-2 justify-center items-center">
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Consulting</a>
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown 2 -->
+                    <div class="dropdown relative">
+                        <!-- Dropdown Button 2 -->
+                        <button id="dropdownButton2"
+                            class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                            <span class="text-[12px] leading-[18px]   font-normal py-[6px]]">Solutions</span>
+                            <!-- Icon (Chevron Down) -->
+                            <svg id="dropdownIcon2" xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown Menu 2 -->
+                        <div id="dropdownMenu2"
+                            class="hidden absolute mt-[26px] w-48 bg-[#14191D] text-white rounded-md shadow-lg z-20">
+                            <div class="flex flex-col gap-2 justify-center items-center">
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Consulting</a>
+                                <a href="#"
+                                    class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px] w-full text-center ">Integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
+                        Careers
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
+                        Community
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0]     hover:text-[#4FC4CD]   font-normal py-[6px]"
+                        href="#">
+                        About Us
+                    </a>
+                    <a class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD]  font-normal py-[6px]"
+                        href="#">
+                        FAQs
+                    </a>
+                </div>
+                <!-- language menu -->
+
+
+                <div class="dropdown relative  lg:block hidden ">
+                    <!-- Dropdown Button 2 -->
+                    <button id="dropdownButton3"
+                        class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
+                        <img src="/images/fb.svg" alt="" />
+                        <span id="dropdownText" class="text-[12px] leading-[18px] font-normal py-[6px]">EN</span>
+                        <!-- Icon (Chevron Down) -->
+                        <svg id="dropdownIcon3" xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform duration-300 transform" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+
+                    <!-- Dropdown Menu 2 -->
+                    <div id="dropdownMenu3"
+                        class="hidden absolute mt-[26px] w-48 bg-[#14191D] text-white rounded-md shadow-lg z-20">
+                        <div class="flex flex-col gap-2 justify-center items-center ">
+                            <a href="#" id="menuConsulting"
+                                class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD] font-normal py-[6px] w-full text-center">Consulting</a>
+                            <a href="#" id="menuIntegration"
+                                class="text-[12px] leading-[18px] text-[#EFEFF0] hover:text-[#4FC4CD] font-normal py-[6px] w-full text-center">Integration</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center ">
+                    <!-- Button with hover -->
+                    <div class="group pb-5 -mb-5">
+                        <button
+                            class="py-[16px] group-hover:bg-white group-hover:text-black  duration-[0.5s] hidden lg:block px-3 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF] max-w-[137px] w-full">
+                            Download app
+                        </button>
+                        <!-- Div that appears on hover -->
+                        <div
+                            class="absolute right-0 top-[110%] duration-[0.4s] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity  bg-white text-black py-2.5 px-4 rounded-lg shadow-lg z-10 w-[400px]">
+                            <div class="flex w-full gap-2">
+                                <img class="max-w-[110px] h-[110px] w-full" src="/images/qr.png" alt="qr">
+                                <div class="flex flex-col gap-[2px] items-center ">
+                                    <p class="text-[13px] leading-6 font-semibold text-[#323E48]">Scan to download CAFU
+                                        app in
+                                        your phone. <a class="text-[#ADB2B6]" href="#">Or get it here:</a></p>
+                                    <div class="flex gap-2 items-center w-full">
+                                        <button
+                                            class="flex gap-1 p-3  bg-gray-200 rounded-[20px] items-center w-full justify-center">
+                                            <img src="/images/apple_logo.svg" alt="">
+                                            <span class="text-[13px] ">App Store</span>
+                                        </button>
+                                        <button
+                                            class="flex gap-1 p-3  bg-gray-200 rounded-[20px] items-center w-full justify-center">
+                                            <img src="/images/googleplay.svg" alt="">
+                                            <span class="text-[13px] ">App Store</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search bar icon -->
+                    <div id="searchbarIcon" class="rounded-[50px] search cursor-pointer bg-[#262F36] p-[14px]">
+                        <img src="/images/searchicon.png" alt="searchicon">
+                    </div>
+
+                    <!-- Sidebar icon (visible in mobile) -->
+                    <img id="sidebarIcon" class="lg:hidden" src="/images/sidebaricon.png" alt="sidebaricon">
+                </div>
+            </div>
+            <div class="searchbaractive hidden lg:block  w-full  px-5 md:px-[50px] ">
+                <div class=" closesearchbar flex justify-end pt-[30px] ">
+                    <img class="p-3 cursor-pointer " src="/images/closeicon.png" alt="closeicon">
+                </div>
+                <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
+                    <img src="/images/searchicon.png" alt="searchicon">
+                    <input placeholder="Search Blog" type="search"
+                        class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
+                </div>
+                <div class="pt-[10px] ">
+                    <ul class="flex gap-[30px] md:px-[68px]  flex-wrap">
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                        <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                    </ul>
+                </div>
+                <div class="mt-10">
+                    <h2 class="text-[14px] font-normal leading-5 text-[#ADB2B6]">Recent Searches</h2>
+                    <div class="flex gap-3 pb-[50px] flex-wrap max-[500px]:justify-center pt-2.5 ">
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
+                            Fuel Delivery</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Wash</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Tyres</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Engine Oil</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Battery</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                            Insurance</button>
+                        <button
+                            class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Rescue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:hidden">
+            <div id="sidebar" class="sidebar ">
+                <div class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px] ">
+                    <div class="border-b border-[#21292F] ">
+                        <div class="flex items-center justify-between mx-4 py-2.5 px-4">
+                            <a href="#">
+                                <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
+                            </a>
+                            <img class="" id="closeSidebar" src="/images/closeicon.png" alt="closeicon">
+                        </div>
+                    </div>
+                    <div class="overflow-scroll h-[calc(100%_-_100px)] ">
+                        <div
+                            class="flex flex-col  space-y-[30px] px-5 border-b border-[#21292F] pt-[40px] pb-[56px] items-center ">
+                            <div class="w-full text-center">
+                                <div
+                                    class="accordion-header cursor-pointer group flex py-[6px] gap-1 items-center justify-center ">
+                                    <h2 class="text-[#EFEFF0]  text-[16px] group-hover:text-[#4FC4CD] ">Services</h2>
+                                    <!-- <img src="/images/arrowicon.svg" alt="arrow"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16"
+                                        fill="hover:red">
+                                        <path d="M5.83301 6.66675L8.49967 9.33341L11.1663 6.66675" stroke="#DEE0E2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <ul class=" overflow-hidden h-0 duration-[0.3s] w-full flex space-y-[10px] flex-col ">
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="w-full text-center">
+                                <div
+                                    class="accordion-header cursor-pointer group flex py-[6px] gap-1 items-center justify-center">
+                                    <h2 class="text-[#EFEFF0]  text-[16px] group-hover:text-[#4FC4CD] ">For Business
+                                    </h2>
+                                    <img src="/images/arrow.png" alt="arrow">
+                                </div>
+                                <ul class=" overflow-hidden h-0 duration-[0.3s] w-full flex space-y-[10px] flex-col ">
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                    <li><a class="font-normal text-[14px]" href="">Fuel Delivery</a></li>
+                                </ul>
+                            </div>
+
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                Careers
+                            </a>
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                Community
+                            </a>
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                About Us
+                            </a>
+                            <a class="text-[16px] leading-[18px] text-[#EFEFF0] font-normal py-[6px] hover:text-[#4FC4CD] duration-[0.5s] "
+                                href="#">
+                                FAQs
+                            </a>
+                        </div>
+                        <div class="flex gap-3 items-center justify-end sm:justify-center px-5 pt-[50px]">
+                            <button
+                                class="py-4 px-6 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]   w-full">
+                                Download app
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- searchbarres -->
+        <div class="lg:hidden">
+            <div id="searchbarres" class="searchbarres ">
+                <div
+                    class="lg:hidden block w-full bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px]">
+                    <div class="border-b border-[#21292F] ">
+                        <div class="flex items-center justify-between mx-4 py-2.5 px-4">
+                            <a href="#">
+                                <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
+                            </a>
+                            <img class="" id="closesearchbar" src="/images/closeicon.png" alt="closeicon">
+                        </div>
+                    </div>
+                    <div class="overflow-scroll h-[calc(100%_-_100px)]">
+                        <div class="px-5 mt-[40px]">
+                            <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
+                                <img src="/images/searchicon.png" alt="searchicon">
+                                <input placeholder="Search Blog" type="text"
+                                    class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
+                            </div>
+                        </div>
+                        <div class="pt-[10px]">
+                            <ul class="flex gap-[30px] md:px-[68px]  flex-wrap px-5">
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                                <li class="text-[#ADB2B6] font-normal leading-[21px]">Keyword 1</li>
+                            </ul>
+                        </div>
+                        <div class="px-5 mt-[56px]">
+                            <h2 class="text-[14px] font-normal leading-5 text-[#ADB2B6]">Recent Searches</h2>
+                            <div class="flex gap-3 pb-[50px] flex-wrap max-[500px]:justify-center pt-2.5">
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">
+                                    Fuel Delivery</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Wash</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Tyres</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Engine Oil</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Battery</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Car
+                                    Insurance</button>
+                                <button
+                                    class="py-2.5 px-4 text-[14px] leading-5 font-medium border border-[#262F36] rounded-[20px] text-[#EFEFF0]  ">Rescue</button>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-center justify-end sm:justify-center px-5 pt-[50px]">
+                            <button
+                                class="py-4 px-6 bg-[#4FC4CD] rounded-full text-[12px] leading-[18px] font-semibold text-[#FFFFFF]   w-full">
+                                Download app
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-[url('./images/blogbg.png')] object-cover bg-center h-[460px]"></section>
+
+    <section class="">
+        <div class="pt-[64px]  bg-black">
+            <div class="container">
+                <div class="flex items-center justify-between gap-x-6">
+
+                    <div class=" items-center gap-x-[10px] flex-nowrap hidden tab:flex">
+                        <img src="./images/breadcrum.svg" alt="icon">
+                        <span class="poppins text-xs font-semibold text-[#DEE0E2] cursor-pointer text-nowrap">Back
+                        </span>
+                        <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">/
+                            Blog</span>
+                        <span class="poppins text-xs font-semibold text-[#5B656D] cursor-pointer text-nowrap">/ Fuel
+                            Delivery /
+                        </span>
+                        <span class="poppins text-xs font-semibold text-[#DEE0E2] cursor-pointer text-nowrap">Blog
+                            Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="container">
+        <div class="flex gap-[50px] lg:flex-row flex-col-reverse pb-20  pt-[64px]">
+            <div class="flex gap-[50px] ">
+                <div class="py-5 px-4 bgleftsidecolor rounded-[24px] w-[375px] ">
+                    <div class="flex flex-col space-y-[40px]">
+                        <div class="lg:flex flex-col gap-6 hidden">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">Table
+                                Of
+                                Content
+                            </h2>
+                            <div>
+                                <h2 class="text-[#FFFFFF] text-[16px] font-semibold leading-6">Anatomy of a Car Battery
+                                </h2>
+                                <ul class="flex space-y-[16px] flex-col pt-4 ">
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How It Works</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">Table
+                                Share Post
+                            </h2>
+                            <div class="flex gap-[16px]">
+                                <img class="" src="/images/linkin.svg" alt="linkin">
+                                <img class="" src="/images/fb.svg" alt="fb">
+                                <img class="" src="/images/tiktok.svg" alt="tiktok">
+                                <img class="" src="/images/insta.svg" alt="insta">
+                                <img class="" src="/images/yt.svg" alt="yt">
+                            </div>
+                        </div>
+
+
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">
+                                Tags
+                            </h2>
+                            <div class="flex flex-wrap gap-[6px]">
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6] text-[12px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Battery Troubleshooting
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6] text-[12px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Car Battery Replacement
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6] text-[12px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Car Battery Maintenance
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6] text-[12px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Automotive Batteries
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6] text-[12px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Battery Care Tips
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6]  text-[12px] leading-[15px] text-[#ADB2B6] rounded-[20px]">
+                                    Battery Performance
+                                </button>
+                                <button
+                                    class="py-2.5 px-3 border border-[#ADB2B6] text-[12px] leading-[15px]  text-[#ADB2B6] rounded-[20px]">
+                                    Battery Charging
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-[20px] leading-[28px] pb-3 border-b text-[#EFEFF0] border-[#ADB2B6]">Table
+                                Related Posts
+                            </h2>
+                            <div>
+                                <h2 class="text-[#FFFFFF] text-[16px] font-semibold leading-6">Anatomy of a Car Battery
+                                </h2>
+                                <ul class="flex space-y-[16px] flex-col pt-4 ">
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">How Car Batteries Work
+                                    </li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Choosing the Right Car
+                                        Battery</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Maintaining Your Car
+                                        Battery</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Common Signs of a
+                                        Failing Car Battery</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">The Impact of
+                                        Temperature on Car Batteries</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Difference Between
+                                        Lead-Acid and Lithium-Ion Batteries</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Advancements in Car
+                                        Battery Technology</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">DIY Battery Testing
+                                        and Replacement</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Environmental Impact
+                                        of Car Batteries</li>
+                                    <li class="list-none  text-[#ADB2B6] text-[16px] font-normal">Future Trends in
+                                        Automotive Power Systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col space-y-[40px]">
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">Understanding the Heart of Your Vehicle: The Car
+                        Battery</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">In the realm of automotive essentials, few components
+                        are as
+                        crucial as the car battery. Often
+                        overlooked until it fails, the battery serves as the heartbeat of your vehicle, powering
+                        everything from ignition to electronic systems. Let's delve into the intricacies of this vital
+                        automotive component.</p>
+                </div>
+                <img class="max-w-[782px] w-full" src="/images/blogdetails.png" alt="blogdetails">
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">Understanding the Heart of Your Vehicle: The Car
+                        Battery</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">A typical car battery is a robust, rechargeable unit
+                        housed in a durable plastic case. Inside, it comprises several key elements:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium"> Lead Plates: These are the core
+                            components
+                            responsible for storing and releasing electrical
+                            energy.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Electrolyte Solution: A mixture of
+                            sulfuric acid
+                            and water that facilitates the flow of ions
+                            between the lead plates, enabling the battery to generate electricity.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Battery Case: Provides structural
+                            support and
+                            houses the internal components securely.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Terminal Posts: Connectors that
+                            link the battery
+                            to the vehicle’s electrical system.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">How It Works</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">The primary function of a car battery is to provide the
+                        initial burst of electricity required to start the engine. This process, known as cranking amps
+                        (CA), relies on chemical reactions within the battery. When you turn the key, the battery
+                        delivers a surge of electricity to the starter motor, which ignites the engine.</p>
+                    <p class="text-[#DEE0E2] py-3 text-[18px] ">Beyond starting the vehicle, the battery plays a pivotal
+                        role in powering:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium"> Electrical Systems: Lights, radio,
+                            air conditioning, and other onboard electronics.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Ignition System: Ensuring a
+                            consistent spark for combustion in gasoline engines.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Battery Case: Provides structural
+                            support and houses the internal components securely.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Fuel Injection Systems: In modern
+                            vehicles, the battery assists in delivering precise amounts of fuel to the engine.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">Maintenance and Longevity</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">Proper care can significantly extend the life of your
+                        car battery:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium"> Regular Inspections: Check for
+                            corrosion around terminals and ensure they are clean and tightly connected.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Charging: If your vehicle isn’t
+                            used frequently, consider using a trickle charger to maintain optimal charge levels.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Extreme Temperatures: Batteries can
+                            struggle in both extreme heat and cold, affecting performance and longevity. Insulating or
+                            shielding your battery can mitigate these effects.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">Signs of Battery Trouble</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">Recognizing symptoms of a failing battery can prevent
+                        unexpected breakdowns:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium"> Slow Engine Crank: If your engine
+                            turns over sluggishly when starting, it may indicate a weakening battery.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Dashboard Warnings: Modern vehicles
+                            often display a battery warning light if there’s an issue.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Age: Most car batteries last 3-5
+                            years, depending on usage and climate.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">Choosing the Right Battery</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">When replacing your car battery, consider:</p>
+                    <ul class="flex flex-col space-y-4 list-disc ml-5 pt-3">
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium"> Compatibility: Ensure it matches
+                            your vehicle’s specifications in terms of size, voltage, and capacity.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Quality: Opt for reputable brands
+                            known for reliability.</li>
+                        <li class="text-[18px] text-[#DEE0E2] leading-6 font-medium">Warranty: Longer warranties often
+                            reflect confidence in durability.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-[24px] leading-8  text-[#FFFFFF] ">Conclusion</h2>
+                    <p class="text-[#DEE0E2] pt-4 text-[18px] ">The car battery is a cornerstone of automotive
+                        functionality, powering essential systems that keep your vehicle running smoothly. Understanding
+                        its role, performing regular maintenance, and knowing when to replace it are key to ensuring
+                        reliable performance and avoiding inconvenient breakdowns. By prioritizing battery health, you
+                        safeguard both your vehicle and your peace of mind on the road.</p>
+                    <p class="text-[#DEE0E2] pt-3 text-[18px] ">Whether you're a seasoned driver or new to car
+                        ownership, appreciating the importance of your car battery is fundamental to maintaining a
+                        well-functioning vehicle. Keep your battery charged, maintain it regularly, and it will continue
+                        to serve as the dependable power source your vehicle needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10  lg:py-20 bg-black">
+        <div class="container">
+            <div>
+                <h2
+                    class="text-center text-[#EFEFF0] text-2xl  md:text-5xl leading-[30px] font-semibold md:leading-[58px] capitalize poppins">
+                    Blog Articles
+                </h2>
+                <div class="mt-8 md:mt-14 grid lg:grid-cols-2  md:gap-6">
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-[6px] flex   gap-x-5 common-hover">
+                        <div>
+                            <img src="./images/Rectangle 2.png" class="max-[768px]:min-w-[110px]" alt="">
+                        </div>
+                        <div class="md:py-3 flex flex-col gap-y-3 md:gap-y-4">
+                            <div>
+                                <h3 class="text-xs text-[#FFF3CE] leading-4 poppins">Mark Zane</h3>
+                                <h2
+                                    class="text-[13px] tab:text-xl  text-white capitalize leading-5 tab:leading-7 lg:max-w-[378px] poppins">
+                                    Revolutionizing Fuel Delivery
+                                    -Convenience at Your Doorstep</h2>
+                            </div>
+                            <div class="flex items-center gap-x-[14px]">
+                                <h3
+                                    class="text-[#4FC4CD] bg-[#262f3699] py-1 md:py-2 px-3 rounded-[30px] text-[10px] md:text-xs poppins">
+                                    Designing</h3>
+                                <p class="text-[10px] md:text-xs text-white poppins">12/6/2024</p>
+                                <p class="text-[10px] md:text-sm leading-5 text-[#ADB2B6] poppins">5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#21292F]  py-14">
+        <div class="max-w-[1286px] w-full py-0 px-4 my-0 mx-auto">
+            <div
+                class="flex justify-between flex-col md:flex-row  gap-x-8 border-b border-[#323E48] pb-12 mb-12 gap-y-12 md:gap-y-0">
+                <div class="flex flex-col gap-y-8 md:gap-y-[22px] items-start md:max-w-[642px] w-full">
+                    <a href="#">
+                        <img src="./images/cafulogo.svg" alt="logo">
+                    </a>
+                    <div class=" items-center gap-x-3 hidden md:flex ">
+                        <a href="#">
+                            <img src="./images/ioslogo.svg" alt="logo">
+                        </a>
+                        <a href="#">
+                            <img src="./images//androidlogo.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="md:hidden w-full">
+                        <ul class="grid grid-cols-2  gap-y-[14px] gap-x-6">
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/faq.svg" alt="">
+                                    FAQs</a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/call.svg" alt=""> 800
+                                    692238</a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/whatsapp.svg" alt="">
+                                    WhatsApp</a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/language.svg" alt="">
+                                    <div class="flex items-center">
+                                        EN <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="leading-5 text-[13px] text-[#7E878E] poppins">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/globe.svg" alt="">
+                                    <div class="flex items-center">
+                                        UAE <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-x-6 md:gap-x-0 md:flex md:justify-between md:max-w-[550px] w-full ">
+                    <div>
+                        <ul class="flex flex-col items-start gap-y-4">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">About Us</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fleet Services</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Partnerships</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Community</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Careers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="flex flex-col items-start gap-y-4">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Fuel Delivery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Wash</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Battery</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Tyres</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Engine Oil</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Car Insurance</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                                <a href="#">Rescue</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:block">
+                        <ul class="flex items-start flex-col gap-y-4">
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/faq.svg" alt="">
+                                    FAQs</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/call.svg" alt=""> 800
+                                    692238</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/whatsapp.svg" alt="">
+                                    WhatsApp</a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E] poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/language.svg" alt="">
+                                    <div class="flex items-center">
+                                        EN <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li
+                                class="leading-5 text-[13px] text-[#7E878E]  poppins hover:text-white transition-all duration-300">
+                                <a href="#" class="flex items-center gap-x-2"><img src="./images/globe.svg" alt="">
+                                    <div class="flex items-center ">
+                                        UAE <img src="./images/downicon.svg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center flex-col-reverse md:flex-row justify-between gap-y-5 md:gap-y-0">
+                <div class="flex items-start md:items-center gap-x-6">
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white cursor-pointer">
+                        © 2024 CAFU. All Rights Reserved</p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Terms</a>
+                    </p>
+                    <p
+                        class="text-[13px] leading-[22px] text-[#7E878E] poppins transition-all duration-300 hover:text-white">
+                        <a href="#">Privacy</a>
+                    </p>
+                </div>
+                <div class="flex items-center gap-x-4">
+                    <a href="#"><img src="./images/insta.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/fb.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/linkin.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/tiktok.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/yt.svg" alt="logo"></a>
+                    <a href="#"><img src="./images/twitterx.svg" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let searchbaractive = document.querySelector(".searchbaractive");
+        let closesearchbar = document.querySelector(".closesearchbar");
+
+        document.querySelector(".search").addEventListener("click", function () {
+            if (!searchbaractive.classList.contains("active")) {
+                let fullHeight = searchbaractive.scrollHeight + "px";
+                searchbaractive.style.height = fullHeight;
+                searchbaractive.classList.add("active");
+            } else {
+                searchbaractive.style.height = "0";
+                searchbaractive.classList.remove("active");
+            }
+        });
+
+        closesearchbar.addEventListener("click", function () {
+            searchbaractive.style.height = "0";
+            searchbaractive.classList.remove("active");
+        });
+
+
+        const sidebar = document.getElementById("sidebar");
+        const sidebarIcon = document.getElementById("sidebarIcon");
+        const closeSidebarBtn = document.getElementById("closeSidebar");
+
+        // Open sidebar when search icon is clicked
+        sidebarIcon.addEventListener("click", () => {
+            sidebar.classList.toggle("activeside"); // Toggles visibility
+        });
+
+        // Close sidebar when close button is clicked
+        closeSidebarBtn.addEventListener("click", () => {
+            sidebar.classList.remove("activeside"); // Hides sidebar
+        });
+
+        const searchbarres = document.getElementById("searchbarres");
+        const searchbarIcon = document.getElementById("searchbarIcon");
+        const closesearchbarres = document.getElementById("closesearchbar");
+
+        // Open sidebar when search icon is clicked
+        searchbarIcon.addEventListener("click", () => {
+            searchbarres.classList.toggle("activeside"); // Toggles visibility
+        });
+
+        // Close sidebar when close button is clicked
+        closesearchbarres.addEventListener("click", () => {
+            searchbarres.classList.remove("activeside"); // Hides sidebar
+        });
+
+        // Dropdown 1 Logic
+        const dropdownButton1 = document.getElementById('dropdownButton1');
+        const dropdownMenu1 = document.getElementById('dropdownMenu1');
+        const dropdownIcon1 = document.getElementById('dropdownIcon1');
+        const dropdownText1 = dropdownButton1.querySelector('span'); // Select the span for dropdown 1
+
+        dropdownButton1.addEventListener('click', () => {
+            dropdownMenu1.classList.toggle('hidden'); // Toggle menu visibility
+            dropdownIcon1.classList.toggle('rotate-180'); // Rotate icon
+            dropdownButton1.classList.toggle('text-[#4FC4CD]'); // Change text and icon color
+            dropdownText1.classList.toggle('text-[#4FC4CD]'); // Change span text color when active
+        });
+
+        // Dropdown 2 Logic
+        const dropdownButton2 = document.getElementById('dropdownButton2');
+        const dropdownMenu2 = document.getElementById('dropdownMenu2');
+        const dropdownIcon2 = document.getElementById('dropdownIcon2');
+        const dropdownText2 = dropdownButton2.querySelector('span'); // Select the span for dropdown 2
+
+        dropdownButton2.addEventListener('click', () => {
+            dropdownMenu2.classList.toggle('hidden'); // Toggle menu visibility
+            dropdownIcon2.classList.toggle('rotate-180'); // Rotate icon
+            dropdownButton2.classList.toggle('text-[#4FC4CD]'); // Change text and icon color
+            dropdownText2.classList.toggle('text-[#4FC4CD]'); // Change span text color when active
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+            if (!dropdownButton1.contains(event.target)) {
+                dropdownMenu1.classList.add('hidden');
+                dropdownIcon1.classList.remove('rotate-180');
+                dropdownButton1.classList.remove('text-[#4FC4CD]');
+                dropdownText1.classList.remove('text-[#4FC4CD]'); // Remove active color from span
+            }
+            if (!dropdownButton2.contains(event.target)) {
+                dropdownMenu2.classList.add('hidden');
+                dropdownIcon2.classList.remove('rotate-180');
+                dropdownButton2.classList.remove('text-[#4FC4CD]');
+                dropdownText2.classList.remove('text-[#4FC4CD]'); // Remove active color from span
+            }
+        });
+
+
+        // Get the button, menu, icon, and text elements
+        const dropdownButton = document.getElementById('dropdownButton3');
+        const dropdownMenu = document.getElementById('dropdownMenu3');
+        const dropdownIcon = document.getElementById('dropdownIcon3');
+        const dropdownText = document.getElementById('dropdownText');
+
+        // Menu items
+        const menuConsulting = document.getElementById('menuConsulting');
+        const menuIntegration = document.getElementById('menuIntegration');
+
+        // Toggle dropdown menu on button click
+        dropdownButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+            dropdownIcon.classList.toggle('rotate-180');
+        });
+
+        // Close the dropdown if clicked outside of it
+        document.addEventListener('click', (event) => {
+            const isClickInside = dropdownButton.contains(event.target);
+
+            if (!isClickInside) {
+                dropdownMenu.classList.add('hidden');
+                dropdownIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Change the dropdown button text to the selected menu item
+        const updateDropdownText = (newText) => {
+            dropdownText.textContent = newText;
+            dropdownMenu.classList.add('hidden'); // Close the menu after selection
+            dropdownIcon.classList.remove('rotate-180'); // Reset the icon
+        };
+
+        // Add click event listeners for menu items
+        menuConsulting.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the default link behavior
+            updateDropdownText('Consulting');
+        });
+
+        menuIntegration.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the default link behavior
+            updateDropdownText('Integration');
+        });
+
+
+
+
+        // accordian header
+        // Get all accordion headers
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        // Attach the sidebarAccordion function to each header
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', sidebarAccordion);
+        });
+
+
+        function sidebarAccordion(e) {
+            try {
+                // Get the sibling element (accordion content)
+                let sibling = e.currentTarget.nextElementSibling;
+
+                // Check if the sibling element exists and is valid
+                if (sibling) {
+                    // Get the height of the sibling element
+                    let getHeight = sibling.scrollHeight;
+
+                    // Check if the style attribute is set
+                    if (!sibling.style.height || sibling.style.height === '0px') {
+                        // Set the height of the sibling element to reveal content
+                        sibling.style.height = `${getHeight}px`;
+                    } else {
+                        // Reset the height to 0 to hide the content
+                        sibling.style.height = '0px';
+                    }
+                } else {
+                    // Show an error message if the sibling element is not found or invalid
+                    console.error("Sibling element not found or invalid.");
+                }
+            } catch (error) {
+                // Log an error message if an exception occurs
+                console.error("An error occurred:", error);
+            }
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            //   loop: true,
+            //   slidesperview:1,
+            slidesPerView: 1.2, // Display 3 slides at once
+            spaceBetween: 10, // Add space between slides (optional)
+            loop: true,
+            // If you want pagination or navigation
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next1',
+                prevEl: '.swiper-button-prev1',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,  // 1 slide for screens 640px and below
+                },
+                768: {
+                    slidesPerView: 3,  // 2 slides for screens 768px and above
+                },
+                1024: {
+                    slidesPerView: 4,  // 3 slides for screens 1024px and above
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
