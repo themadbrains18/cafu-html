@@ -102,6 +102,12 @@
 .common-hover{
         @apply transition-all duration-300 cursor-pointer hover:translate-y-[-5px]
     }
+    @media screen and (max-width:400px) {
+        .sidebar.activeside{
+            right: -10%;
+            transition: all 1s;
+        }
+    }
     @media screen and (max-width:640px) {
         .swiper-pagination-bullet-active{
         @apply !bg-white !w-[58px]
@@ -131,7 +137,7 @@
 </head>
 
 <body class="bg-black poppins">
-    <header class="max-w-[1224px]  w-full fixed z-10 left-1/2 transform -translate-x-1/2 px-4">
+    <header class="max-w-[1256px] box-border  w-full fixed z-10 left-1/2 transform -translate-x-1/2 px-4">
 
         <div class=" relative border-[#14191D] border mt-[30px]  rounded-[40px] bg-black ">
             <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
@@ -218,7 +224,7 @@
 
                 <div class="dropdown relative  lg:block hidden ">
                     <!-- Dropdown Button 2 -->
-                    <button  id="dropdownButton3"
+                    <button id="dropdownButton3"
                         class="dropdown-btn flex items-center space-x-2 bg-transparent text-white hover:text-[#4FC4CD] font-medium focus:outline-none">
                         <img src="/images/fb.svg" alt="" />
                         <span id="dropdownText" class="text-[12px] leading-[18px] font-normal py-[6px]">EN</span>
@@ -243,7 +249,7 @@
                     </div>
                 </div>
 
-                <div class="relative flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-center ">
+                <div class="relative flex gap-3 items-center lg:w-full lg:max-w-[199px] justify-end sm:justify-end ">
                     <!-- Button with hover -->
                     <div class="group pb-5 -mb-5">
                         <button
@@ -290,7 +296,7 @@
                 <div class=" closesearchbar flex justify-end pt-[30px] ">
                     <img class="p-3 cursor-pointer " src="/images/closeicon.png" alt="closeicon">
                 </div>
-                <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full">
+                <div class=" pt-3 pb-6 px-5 border-b border-[#323E48] flex gap-6 items-center  w-full mt-[30px]">
                     <img src="/images/searchicon.png" alt="searchicon">
                     <input placeholder="Search Blog" type="search"
                         class="outline-none text-[#ADB2B6] w-full bg-black border-none" name="" id="">
@@ -337,7 +343,7 @@
         <!-- Sidebar -->
         <div class="lg:hidden">
             <div id="sidebar" class="sidebar ">
-                <div class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] rounded-l-[30px] ">
+                <div class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] max-[400px]:max-w-[335px]">
                     <div class="border-b border-[#21292F] ">
                         <div class="flex items-center justify-between mx-4 py-2.5 px-4">
                             <a href="#">
@@ -419,7 +425,7 @@
                             <a href="#">
                                 <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
                             </a>
-                            <img class="" id="closesearchbar" src="/images/closeicon.png" alt="closeicon">
+                            <img class="closesearchbar2" id="closesearchbar" src="/images/closeicon.png" alt="closeicon">
                         </div>
                     </div>
                     <div class="overflow-scroll h-[calc(100%_-_100px)]">
@@ -751,7 +757,7 @@
                             class="swiper-button-prev1 !relative p-2 rounded-[20px] hidden tab:block bg-[#262F36] rotate-180 ">
                             <img src="./images/swiper.svg" alt="">
                         </div>
-                        <div class="tab:bg-[#21292F]  max-w-[268px] overflow-hidden  ">
+                        <div class="tab:bg-[#21292F]  max-w-[268px] overflow-hidden rounded-[30px]  ">
                             <div class="swiper-pagination  static flex flex-nowrap"></div>
                         </div>
                         <div class="swiper-button-next1 !relative p-2 rounded-[20px] hidden tab:block bg-[#262F36] ">
@@ -1479,6 +1485,7 @@
     <script>
         let searchbaractive = document.querySelector(".searchbaractive");
         let closesearchbar = document.querySelector(".closesearchbar");
+        let closesearchbar2 = document.querySelector(".closesearchbar2");
 
         document.querySelector(".search").addEventListener("click", function () {
             if (!searchbaractive.classList.contains("active")) {
@@ -1509,12 +1516,15 @@
         // Close sidebar when close button is clicked
         closeSidebarBtn.addEventListener("click", () => {
             sidebar.classList.remove("activeside"); // Hides sidebar
+            blacksearch.classList.toggle("blacksearch") // Toggles visibility
+            graysearch.classList.toggle("graysearch")
         });
 
         const searchbarres = document.getElementById("searchbarres");
         const searchbarIcon = document.getElementById("searchbarIcon");
         const blacksearch = document.getElementById("blacksearch");
         const graysearch = document.getElementById("graysearch");
+        const closesearch = document.querySelector(".closesearchbar");
         const closesearchbarres = document.getElementById("closesearchbar");
 
         // Open sidebar when search icon is clicked
@@ -1529,6 +1539,18 @@
         // Close sidebar when close button is clicked
         closesearchbarres.addEventListener("click", () => {
             searchbarres.classList.remove("activeside"); // Hides sidebar
+            blacksearch.classList.toggle("blacksearch") // Toggles visibility
+            graysearch.classList.toggle("graysearch")
+        });
+        closesearchbar2.addEventListener("click" , ()=>{
+            blacksearch.classList.remove("blacksearch") // Toggles visibility
+            graysearch.classList.remove("graysearch")   
+            searchbarIcon.classList.remove("bg")
+        })
+        closesearch.addEventListener("click", () => {
+            blacksearch.classList.toggle("blacksearch") // Toggles visibility
+            graysearch.classList.toggle("graysearch")
+            searchbarIcon.classList.toggle("bg")
         });
 
         // Dropdown 1 Logic
