@@ -143,7 +143,9 @@
             <div class="flex items-center justify-between py-2.5 px-5 md:pr-3 md:pl-[32px] bg-[#14191D] rounded-[40px]">
                 <div class="flex items-center gap-5">
                     <img src="./images/arrow.png" class="lg:hidden rotate-[90deg]" alt="arrow">
-                    <img src="/images/logo.png" alt="logo">
+                    <a href="#">
+                        <img src="/images/logo.png" alt="logo">
+                    </a>
                 </div>
                 <div class="lg:flex gap-5 items-center hidden">
                     <!-- Dropdown 1 -->
@@ -343,7 +345,8 @@
         <!-- Sidebar -->
         <div class="lg:hidden">
             <div id="sidebar" class="sidebar ">
-                <div class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] max-[400px]:max-w-[335px]">
+                <div
+                    class="lg:hidden block bg-[#0E0F11] text-white shadow-lg h-screen pt-[30px] max-[400px]:max-w-[335px]">
                     <div class="border-b border-[#21292F] ">
                         <div class="flex items-center justify-between mx-4 py-2.5 px-4">
                             <a href="#">
@@ -425,7 +428,8 @@
                             <a href="#">
                                 <img class="max-w-[91px] w-full" src="./images/cafulogo.svg" alt="logo">
                             </a>
-                            <img class="closesearchbar2" id="closesearchbar" src="/images/closeicon.png" alt="closeicon">
+                            <img class="closesearchbar2" id="closesearchbar" src="/images/closeicon.png"
+                                alt="closeicon">
                         </div>
                     </div>
                     <div class="overflow-scroll h-[calc(100%_-_100px)]">
@@ -1555,9 +1559,9 @@
             blacksearch.classList.toggle("blacksearch") // Toggles visibility
             graysearch.classList.toggle("graysearch")
         });
-        closesearchbar2.addEventListener("click" , ()=>{
+        closesearchbar2.addEventListener("click", () => {
             blacksearch.classList.remove("blacksearch") // Toggles visibility
-            graysearch.classList.remove("graysearch")   
+            graysearch.classList.remove("graysearch")
             searchbarIcon.classList.remove("bg")
         })
         closesearch.addEventListener("click", () => {
